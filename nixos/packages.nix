@@ -15,5 +15,8 @@
     nano
     mesa-demos
     libva-utils
+    clinfo
+    openrazer-daemon
+    polychromatic
   ];
 }

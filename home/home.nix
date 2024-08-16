@@ -4,11 +4,15 @@
 {
   imports = [ 
     ./pkgs
+    ./gtk
   ];
   home = {
-    stateVersion = "24.11";
+    stateVersion = "${curversion}";
     username = "unixlike";
     homeDirectory = "/home/unixlike";
-    sessionVariables = { };
+    sessionVariables = { 
+      QT_WAYLAND_DECORATION = "adwaita";
+      QT_QPA_PLATFORM = "wayland";
+    };
   };
 }

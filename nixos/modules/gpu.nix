@@ -8,6 +8,7 @@
     enable32Bit = true;
     extraPackages = with pkgs; [
       libva
+      rocmPackages.clr.icd
     ];
   };
   programs.corectrl = {
@@ -15,4 +16,7 @@
     gpuOverclock.enable = true;
     gpuOverclock.ppfeaturemask = "0xffffffff";
   };
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  ];
 }

@@ -33,7 +33,7 @@
     };
   in 
   {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.b450 = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs system pkgs curversion;
       };

@@ -24,6 +24,7 @@
       ./modules/games.nix
       ./modules/security.nix
       ./modules/gnome-polkit.nix
+      #./modules/vmware.nix
     ];
 
 
@@ -47,9 +48,8 @@
   services.printing.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];
  
-
-
+  hardware.openrazer.enable = true;
   programs.firefox.enable = true;
-  system.stateVersion = "$(curversion)"; # Did you read the comment?
+  system.stateVersion = "${curversion}"; # Did you read the comment?
 
 }

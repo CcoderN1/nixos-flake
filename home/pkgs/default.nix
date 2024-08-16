@@ -24,8 +24,16 @@
     gnomeExtensions.appindicator
     gnome-extension-manager
     gnomeExtensions.vitals
+    gnomeExtensions.gsconnect
+    gnomeExtensions.status-area-horizontal-spacing
     mangohud
     python3
     tor
+    mission-center
+    lutris
+    oh-my-fish
+    ntfs3g
+    killall
+    fastfetch
   ];
 }

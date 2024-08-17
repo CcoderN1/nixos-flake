@@ -3,6 +3,7 @@
 }:
 {
   home.packages = with pkgs; [
+    spoof-dpi
     over-google-chrome
     ranger
     vesktop

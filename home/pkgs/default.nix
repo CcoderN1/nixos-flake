@@ -36,5 +36,11 @@
     ntfs3g
     killall
     fastfetch
+    fira-sans
+    roboto
+    #jetbrains.idea-ultimate
+    kdenlive
+    eclipses.eclipse-java
+    blender-hip
   ];
 }

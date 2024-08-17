@@ -20,28 +20,28 @@
   {
     device = "/dev/disk/by-uuid/e033891a-3f88-4961-9778-f7df78078bac";
     fsType = "ext4";
-    options= [ "users" "nofail" ];
+    options = [ "nosuid" "nodev" "nofail" ];
   };
   
   fileSystems."/mnt/kingston" = 
   {
     device = "/dev/disk/by-uuid/0ed99fc3-7d6c-400e-a05f-87bcce1ecf8c";
     fsType = "ext4";
-    options = [ "users" "nofail" ];
+    options = [ "nosuid" "nodev" "nofail" ];
   };
   
   fileSystems."/mnt/NTFS" = 
   {
     device = "/dev/disk/by-uuid/20E769EE38388B35";
     fsType = "ntfs";
-    options = [ "users" "nofail" ];
+    options = [ "nosuid" "nodev" "nofail" ];
   };
   
   fileSystems."/mnt/HDD_500" = 
   {
     device = "/dev/disk/by-uuid/17e232cf-bd22-4a1d-8532-f222d7e3660c";
     fsType = "ext4";
-    options = [ "users" "nofail" ];
+    options = [ "nosuid" "nodev" "nofail" ];
   };
 
   fileSystems."/boot" =

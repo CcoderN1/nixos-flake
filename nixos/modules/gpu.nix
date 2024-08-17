@@ -19,4 +19,16 @@
   systemd.tmpfiles.rules = [
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
+  # Not working polkit for corectrl
+  #environment.etc."polkit-1/rules.d/90-corectrl.rules".text = ''   
+#polkit.addRule(function(action, subject) {
+#  if ((action.id == "org.corectrl.helper.init" ||
+#      action.id == "org.corectrl.helperkiller.init") &&
+#    subject.local == true &&
+#    subject.active == true &&
+#    subject.isInGroup("unixlike")) {
+#      return polkit.Result.YES;
+#    }
+#});
+#'';
 }

@@ -39,7 +39,7 @@
       options = "--delete-older-than 7d";
     };
   };
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "zimmer"; # Define your hostname.
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Moscow";
   
@@ -54,6 +54,8 @@
     layout = "us";
     variant = "";
   };
+
+  programs.nix-ld.enable = true;
 
   services.printing.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];

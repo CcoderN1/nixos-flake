@@ -21,11 +21,6 @@
     adw-gtk3
     droidcam
     linuxKernel.packages.linux_zen.v4l2loopback
-    gnomeExtensions.appindicator
-    gnome-extension-manager
-    gnomeExtensions.vitals
-    gnomeExtensions.gsconnect
-    gnomeExtensions.status-area-horizontal-spacing
     mangohud
     python3
     tor

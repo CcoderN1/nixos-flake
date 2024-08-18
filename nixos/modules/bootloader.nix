@@ -9,5 +9,6 @@
 
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
+  #boot.extraModulePackages = [ config.boot.kernelPackages.wireguard ];
   #boot.kernelPackages = pkgs.linuxPackages_zen;
 }

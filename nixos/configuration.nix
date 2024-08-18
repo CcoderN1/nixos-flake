@@ -26,6 +26,7 @@
       ./modules/gnome-polkit.nix
       ./monitors/gdm/default.nix
       ./mouse_gdm.nix
+      #./modules/yandex-music.nix
       #./modules/vmware.nix
     ];
 
@@ -58,7 +59,6 @@
   };
 
   programs.nix-ld.enable = true;
-
   services.printing.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];
  
@@ -66,4 +66,8 @@
   programs.firefox.enable = true;
   system.stateVersion = "${curversion}"; # Did you read the comment?
 
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
 }

@@ -42,5 +42,8 @@
     mpv
     vlc
     heroic
+    yt-dlp
+    ffmpeg
+    qbittorrent
   ];
 }

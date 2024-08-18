@@ -38,6 +38,9 @@
     blender-hip
     dconf-editor
     micro
-    vim
+    celluloid
+    mpv
+    vlc
+    heroic
   ];
 }

@@ -24,6 +24,8 @@
       ./modules/games.nix
       ./modules/security.nix
       ./modules/gnome-polkit.nix
+      ./monitors/gdm/default.nix
+      ./mouse_gdm.nix
       #./modules/vmware.nix
     ];
 

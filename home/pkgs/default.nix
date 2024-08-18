@@ -9,7 +9,6 @@
     vesktop
     neovim
     htop
-    vscode
     veracrypt
     p7zip
     gpu-screen-recorder-gtk
@@ -42,5 +41,8 @@
     kdenlive
     eclipses.eclipse-java
     blender-hip
+    dconf-editor
+    micro
+    vim
   ];
 }

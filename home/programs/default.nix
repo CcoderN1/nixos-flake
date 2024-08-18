@@ -6,5 +6,6 @@
     ./fzf
     ./zoxide
     ./fish
+    ./vscode
   ];
 }

@@ -4,8 +4,9 @@
 {
   imports = [ 
     ./pkgs
-    ./gtk
+    #./gtk
     ./programs
+    ./gnome
   ];
   home = {
     stateVersion = "${curversion}";

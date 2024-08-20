@@ -45,5 +45,7 @@
     yt-dlp
     ffmpeg
     qbittorrent
+    onlyoffice-bin
+    bat
   ];
 }

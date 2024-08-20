@@ -1,7 +1,9 @@
 {
   programs.fish = {
     enable = true;
-    shellAliases = { };
+    shellAliases = {
+      cat = "bat";
+     };
     functions = {
       fish_greeting = {
         body = "";

@@ -47,5 +47,6 @@
     qbittorrent
     onlyoffice-bin
     bat
+    tty-clock
   ];
 }

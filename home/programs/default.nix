@@ -7,5 +7,6 @@
     ./zoxide
     ./fish
     ./vscode
+    ./ranger
   ];
 }

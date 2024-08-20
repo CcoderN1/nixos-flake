@@ -26,6 +26,7 @@
       ./modules/gnome-polkit.nix
       ./monitors/gdm/default.nix
       ./mouse_gdm.nix
+      ./autostart.nix
       #./modules/yandex-music.nix
       #./modules/vmware.nix
     ];

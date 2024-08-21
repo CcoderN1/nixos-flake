@@ -47,7 +47,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             users.unixlike = import (./. + "/home/home.nix") ;
-            extraSpecialArgs = { inherit curversion; };
+            extraSpecialArgs = { inherit curversion inputs; };
           };
         }
       ];

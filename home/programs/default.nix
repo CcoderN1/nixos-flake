@@ -8,5 +8,7 @@
     ./fish
     ./vscode
     ./ranger
+    ./autostart
+    #./yandex-music
   ];
 }

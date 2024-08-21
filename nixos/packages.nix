@@ -22,5 +22,6 @@
     distrobox
     toolbox
     podman
+    lm_sensors
   ];
 }

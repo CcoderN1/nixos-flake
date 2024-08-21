@@ -23,4 +23,13 @@ Comment[es_ES]=Controle su computadora fácilmente usando perfiles de aplicacion
 GenericName[ru]=Центральный контроль
 Comment[ru]=Управляйте своим оборудованием с легкостью, используя профили приложений 
   '';
+
+  home.file.".config/autostart/SpoofDpi.desktop".text = ''
+[Desktop Entry]
+Name=SpoofDpi
+Exec=spoof-dpi
+Type=Application
+Terminal=false
+Icon=corectrl
+  '';
 }

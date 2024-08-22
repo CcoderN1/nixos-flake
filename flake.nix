@@ -30,6 +30,7 @@
           over-google-chrome = (import ./overlays/chrome.nix { inherit pkgs; });
           over-steam = (import ./overlays/steam.nix { inherit pkgs; });
           spoof-dpi = (prev.callPackage ./overlays/spoof-dpi.nix {});
+          over-materialgram = (prev.callPackage ./overlays/materialgram.nix {});
         })
       ];
     };

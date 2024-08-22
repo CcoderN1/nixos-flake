@@ -20,6 +20,7 @@
 #      mplus-outline-fonts.githubRelease
 #      dina-font
       proggyfonts
+      hack-font
     ]);
   };
 }

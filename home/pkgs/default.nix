@@ -1,4 +1,5 @@
 { pkgs 
+, inputs
 , ...
 }:
 {
@@ -48,5 +49,6 @@
     onlyoffice-bin
     bat
     tty-clock
+    over-materialgram
   ];
 }

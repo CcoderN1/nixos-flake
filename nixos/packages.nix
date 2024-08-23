@@ -11,7 +11,6 @@
     vulkan-tools
     vulkan-loader
     inxi
-    btop
     nano
     mesa-demos
     libva-utils

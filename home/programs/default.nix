@@ -9,6 +9,5 @@
     ./vscode
     ./ranger
     ./autostart
-    ./btop
   ];
 }

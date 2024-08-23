@@ -58,7 +58,6 @@
     variant = "";
   };
 
-  nixpkgs.config.rocmSupport = true;
   programs.nix-ld.enable = true;
   services.printing.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];

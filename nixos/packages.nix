@@ -21,6 +21,7 @@
     distrobox
     toolbox
     podman
+    btop
     lm_sensors
   ];
 }

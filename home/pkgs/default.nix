@@ -50,5 +50,6 @@
     tty-clock
     over-materialgram
     todoist-electron
+    obs-studio
   ];
 }

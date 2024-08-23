@@ -31,7 +31,7 @@
     gnomeExtensions.gsconnect
     gnomeExtensions.status-area-horizontal-spacing
   ];
-  home.file."config/yandex-music/yandex-music.conf".text = ''
+  home.file.".config/yandex-music.conf".text = ''
 ELECTRON_CUSTOM_BIN=
 ELECTRON_ARGS="--no-sandbox"
 TRAY_ENABLED=1

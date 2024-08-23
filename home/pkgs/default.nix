@@ -49,5 +49,6 @@
     bat
     tty-clock
     over-materialgram
+    todoist-electron
   ];
 }

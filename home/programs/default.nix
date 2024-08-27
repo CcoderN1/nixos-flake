@@ -9,5 +9,6 @@
     ./vscode
     ./ranger
     ./autostart
+    ./neovim
   ];
 }

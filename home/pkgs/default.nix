@@ -7,7 +7,6 @@
     over-google-chrome
     ranger
     vesktop
-    neovim
     htop
     veracrypt
     p7zip
@@ -48,9 +47,11 @@
     onlyoffice-bin
     bat
     tty-clock
-    over-materialgram
+    materialgram
     todoist-electron
     obs-studio
     krita
+    gamescope
+    neovim
   ];
 }

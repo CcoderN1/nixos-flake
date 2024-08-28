@@ -58,6 +58,7 @@
     variant = "";
   };
 
+  environment.shells = [ pkgs.fish ];
   programs.nix-ld.enable = true;
   services.printing.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];

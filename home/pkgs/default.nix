@@ -1,4 +1,5 @@
 { pkgs 
+, inputs
 , ...
 }:
 {
@@ -11,7 +12,7 @@
     veracrypt
     p7zip
     gpu-screen-recorder-gtk
-    telegram-desktop
+    #telegram-desktop
     gnome-tweaks
     pavucontrol
     helvum
@@ -31,7 +32,7 @@
     fastfetch
     fira-sans
     roboto
-    #jetbrains.idea-ultimate
+    jetbrains.idea-ultimate
     kdenlive
     eclipses.eclipse-java
     blender-hip
@@ -53,5 +54,8 @@
     krita
     gamescope
     neovim
+    inputs.yandex-browser.packages.${pkgs.system}.yandex-browser-stable
+    nekoray
+    jetbrains.webstorm
   ];
 }

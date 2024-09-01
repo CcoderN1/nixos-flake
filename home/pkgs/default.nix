@@ -57,5 +57,14 @@
     inputs.yandex-browser.packages.${pkgs.system}.yandex-browser-stable
     nekoray
     jetbrains.webstorm
+    #hyprland {
+    swww
+    lxde.lxsession
+    anyrun
+    nautilus
+    nemo
+    kitty
+    gnome-calculator
+    # }
   ];
 }

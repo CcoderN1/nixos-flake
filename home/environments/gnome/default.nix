@@ -24,13 +24,13 @@
     #  ];
     #};
   };
-  home.packages = with pkgs; [
+/*  home.packages = with pkgs; [
     gnomeExtensions.appindicator
     gnome-extension-manager
     gnomeExtensions.vitals
     gnomeExtensions.gsconnect
     gnomeExtensions.status-area-horizontal-spacing
-  ];
+  ];*/
   home.file.".config/yandex-music.conf".text = ''
 ELECTRON_CUSTOM_BIN=
 ELECTRON_ARGS="--no-sandbox"

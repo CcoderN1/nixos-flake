@@ -10,5 +10,7 @@
     ./ranger
     ./autostart
     ./neovim
+    ./waybar
+    ./hyprland
   ];
 }

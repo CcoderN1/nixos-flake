@@ -26,7 +26,6 @@
       ./modules/gnome-polkit.nix
       ./monitors/gdm/default.nix
       ./mouse_gdm.nix
-      ./modules/env-hyprland.nix
       #./modules/yandex-music.nix
       #./modules/vmware.nix
     ];
@@ -52,7 +51,7 @@
   services.xserver.enable = true;
   #services.xserver.enable = services.xserver.videoDri;
   services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
   
   services.xserver.xkb = {
     layout = "us";

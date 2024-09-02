@@ -21,7 +21,6 @@
 #      dina-font
       proggyfonts
       hack-font
-      iosevka
     ]);
   };
 }

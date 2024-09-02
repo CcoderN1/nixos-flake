@@ -6,6 +6,7 @@
     ./pkgs
     ./programs
     ./environments/gnome
+    ./environments/defaultapp
   ];
   home = {
     stateVersion = "${curversion}";

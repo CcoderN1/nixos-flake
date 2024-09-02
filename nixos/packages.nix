@@ -5,8 +5,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    waybar
-    hyprland
     git
     gh
     vulkan-headers
@@ -25,9 +23,5 @@
     podman
     btop
     lm_sensors
-    waybar
-    rofi-wayland
-    hyprlock
-    grimblast
   ];
 }

@@ -6,7 +6,7 @@
   users.users.unixlike = {
     isNormalUser = true;
     description = "unixlike";
-    extraGroups = [ "networkmanager" "wheel" "openrazer" "corectrl" ];
+    extraGroups = [ "networkmanager" "wheel" "openrazer" "corectrl" "libvirtd" ];
     shell = pkgs.fish;
     ignoreShellProgramCheck = true;
   };

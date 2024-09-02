@@ -24,6 +24,7 @@
       ./modules/games.nix
       ./modules/security.nix
       ./modules/gnome-polkit.nix
+      ./modules/virt-manager.nix
       ./monitors/gdm/default.nix
       ./mouse_gdm.nix
       #./modules/yandex-music.nix
@@ -62,6 +63,8 @@
   programs.nix-ld.enable = true;
   services.printing.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];
+  virtualisation.vmware.guest.enable = false;
+  virtualisation.vmware.host.enable = false;
   
   hardware.openrazer.enable = true;
   programs.firefox.enable = true;

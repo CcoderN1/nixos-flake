@@ -151,11 +151,11 @@
         "ymExe": "ymExe"
       },
       "locked": {
-        "lastModified": 1725008655,
-        "narHash": "sha256-M0UcnrYtlrRY1sN65UPXcgEAzcdSpKWeHn4kbLDRRaw=",
+        "lastModified": 1725388724,
+        "narHash": "sha256-Dd2n0wkkt4VOk78Rqf199snKnsNHLsNPhrtIHuankkc=",
         "owner": "cucumber-sp",
         "repo": "yandex-music-linux",
-        "rev": "8d7a26f3f3095044dd08422d9bca5607aa173103",
+        "rev": "6d55829a990177ceda1a9e0b5124bfe26baf7bf5",
         "type": "github"
       },
       "original": {

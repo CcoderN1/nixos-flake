@@ -59,5 +59,7 @@
     jetbrains.webstorm
     jetbrains.phpstorm
     vmware-workstation
+    nodejs_22
+    php
   ];
 }

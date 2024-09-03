@@ -57,5 +57,7 @@
     inputs.yandex-browser.packages.${pkgs.system}.yandex-browser-stable
     nekoray
     jetbrains.webstorm
+    jetbrains.phpstorm
+    vmware-workstation
   ];
 }

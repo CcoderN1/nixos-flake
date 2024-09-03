@@ -26,5 +26,6 @@
     wl-clipboard
     wl-clipboard-x11
     qemu
+    nodejs_22
   ];
 }

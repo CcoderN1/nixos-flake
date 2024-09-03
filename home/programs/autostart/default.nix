@@ -27,7 +27,7 @@ Comment[ru]=Управляйте своим оборудованием с лег
   home.file.".config/autostart/SpoofDpi.desktop".text = ''
 [Desktop Entry]
 Name=SpoofDpi
-Exec=spoof-dpi
+Exec=spoofdpi
 Type=Application
 Terminal=false
 Icon=corectrl

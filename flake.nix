@@ -9,10 +9,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    /*yandex-browser = { 
+    yandex-browser = { 
       url = "github:miuirussia/yandex-browser.nix"; 
       inputs.nixpkgs.follows = "nixpkgs"; 
-    };*/
+    };
   };
 
   outputs = 
@@ -27,9 +27,6 @@
     pkgs = import nixpkgs {
       inherit system;
       config = {
-        permittedInsecurePackages = [
-          "yandex-browser-stable-24.4.1.951-1"
-        ];
         allowUnfree = true;
         rocmSupport = true;
       };
@@ -37,8 +34,6 @@
         (final: prev: {
           over-google-chrome = (import ./overlays/chrome.nix { inherit pkgs; });
           over-steam = (import ./overlays/steam.nix { inherit pkgs; });
-          spoof-dpi = (prev.callPackage ./overlays/spoof-dpi.nix {});
-          over-yandex-browser = (prev.callPackage ./overlays/yandex-browser.nix {});
         })
       ];
     };

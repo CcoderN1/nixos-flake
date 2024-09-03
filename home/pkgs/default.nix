@@ -4,7 +4,7 @@
 }:
 {
   home.packages = with pkgs; [
-    spoof-dpi
+    spoofdpi
     over-google-chrome
     ranger
     vesktop
@@ -54,9 +54,7 @@
     krita
     gamescope
     neovim
-    #inputs.yandex-browser.packages.${pkgs.system}.yandex-browser-stable
-    over-yandex-browser
-    #yandex-browser-beta
+    inputs.yandex-browser.packages.${pkgs.system}.yandex-browser-stable
     nekoray
     jetbrains.webstorm
     jetbrains.phpstorm

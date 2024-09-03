@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "flake-compat": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1696426674,
-        "narHash": "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "0f9255e01c2351cc7d116c072cb317785dd33b33",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "type": "github"
-      }
-    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -104,7 +88,6 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
-        "yandex-browser": "yandex-browser",
         "yandex-music": "yandex-music"
       }
     },
@@ -120,27 +103,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "yandex-browser": {
-      "inputs": {
-        "flake-compat": "flake-compat",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1724458900,
-        "narHash": "sha256-KFH6WCI91cXwFeNA98YM/mvB0hntYddBR2Jg9KTq+RU=",
-        "owner": "miuirussia",
-        "repo": "yandex-browser.nix",
-        "rev": "a7a14055184c4514c54f75ff46416723b23f5fad",
-        "type": "github"
-      },
-      "original": {
-        "owner": "miuirussia",
-        "repo": "yandex-browser.nix",
         "type": "github"
       }
     },

@@ -54,7 +54,9 @@
     krita
     gamescope
     neovim
-    inputs.yandex-browser.packages.${pkgs.system}.yandex-browser-stable
+    #inputs.yandex-browser.packages.${pkgs.system}.yandex-browser-stable
+    over-yandex-browser
+    #yandex-browser-beta
     nekoray
     jetbrains.webstorm
     jetbrains.phpstorm

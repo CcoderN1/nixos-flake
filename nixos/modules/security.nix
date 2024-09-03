@@ -9,6 +9,5 @@
       capabilities = "cap_sys_admin+ep";
       source = "${pkgs.gpu-screen-recorder}/bin/gsr-kms-server";
     };
-    #polkit.enable = true;
   };
 }

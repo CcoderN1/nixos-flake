@@ -31,7 +31,6 @@
     fastfetch
     fira-sans
     roboto
-    #jetbrains.idea-ultimate
     kdenlive
     eclipses.eclipse-java
     blender-hip
@@ -55,6 +54,7 @@
     neovim
     inputs.yandex-browser.packages.${pkgs.system}.yandex-browser-stable
     nekoray
+    #jetbrains.idea-ultimate
     #jetbrains.webstorm
     #jetbrains.phpstorm
     nodejs_22

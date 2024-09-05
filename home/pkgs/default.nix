@@ -20,7 +20,6 @@
     qadwaitadecorations-qt6
     adw-gtk3
     droidcam
-    linuxKernel.packages.linux_zen.v4l2loopback
     mangohud
     python3
     tor

@@ -59,5 +59,6 @@
     #jetbrains.phpstorm
     nodejs_22
     php
+    over-simtoolkitpro
   ];
 }

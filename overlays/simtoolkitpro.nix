@@ -1,12 +1,12 @@
 { pkgs ? import <nixpkgs> { } }:
 let
-  version = "1.2.3";
+  version = "1.2.5";
   pname = "simtoolkitpro-${version}";
   name = "SimToolkitPro-${version}";
 
   src = pkgs.fetchurl {
     url = "https://github.com/simtoolkitpro/stkp-client-releases/releases/download/v${version}/SimToolkitPro-${version}-x86_64.Setup.AppImage";
-    sha256 = "sha256-3Ru9DG48Pq7jl86QNvhbMMFKHeFaouFvrD6Dm4EKQg0=";
+    sha256 = "sha256-YHddwmMWbt5Ss7ejgLTnQvM3RFHupeU8q6D0tnvlb3g=";
   };
 
   appimageContents = pkgs.appimageTools.extract { inherit name src; };

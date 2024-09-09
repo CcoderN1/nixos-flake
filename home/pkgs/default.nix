@@ -33,7 +33,7 @@
     roboto
     kdenlive
     eclipses.eclipse-java
-    blender-hip
+    #blender-hip
     dconf-editor
     micro
     celluloid
@@ -54,11 +54,12 @@
     neovim
     #inputs.yandex-browser.packages.${pkgs.system}.yandex-browser-stable
     nekoray
-    #jetbrains.idea-ultimate
-    #jetbrains.webstorm
-    #jetbrains.phpstorm
+    jetbrains.idea-ultimate
+    jetbrains.webstorm
+    jetbrains.phpstorm
     nodejs_22
     php
     over-simtoolkitpro
+    vkbasalt
   ];
 }

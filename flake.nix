@@ -9,10 +9,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    yandex-browser = { 
+    /*yandex-browser = { 
       url = "github:miuirussia/yandex-browser.nix"; 
       inputs.nixpkgs.follows = "nixpkgs"; 
-    };
+    };*/
   };
 
   outputs = 

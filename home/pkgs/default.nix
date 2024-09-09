@@ -52,7 +52,7 @@
     krita
     gamescope
     neovim
-    inputs.yandex-browser.packages.${pkgs.system}.yandex-browser-stable
+    #inputs.yandex-browser.packages.${pkgs.system}.yandex-browser-stable
     nekoray
     #jetbrains.idea-ultimate
     #jetbrains.webstorm

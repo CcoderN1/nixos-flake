@@ -59,7 +59,8 @@
     jetbrains.phpstorm
     nodejs_22
     php
-    over-simtoolkitpro
+    #over-simtoolkitpro
     vkbasalt
+    #gnome-firmware
   ];
 }

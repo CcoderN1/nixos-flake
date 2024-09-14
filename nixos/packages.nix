@@ -27,6 +27,7 @@
     wl-clipboard-x11
     qemu
     nvtopPackages.amd
+    xorg.xeyes
     #fwupd
   ];
 }

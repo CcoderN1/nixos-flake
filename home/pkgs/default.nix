@@ -24,7 +24,7 @@
     tor
     mission-center
     lutris
-    oh-my-fish
+    #oh-my-fish
     ntfs3g
     killall
     fastfetch

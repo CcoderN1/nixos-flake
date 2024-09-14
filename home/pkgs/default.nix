@@ -12,7 +12,6 @@
     veracrypt
     p7zip
     gpu-screen-recorder-gtk
-    #telegram-desktop
     gnome-tweaks
     pavucontrol
     helvum
@@ -62,5 +61,7 @@
     #over-simtoolkitpro
     vkbasalt
     #gnome-firmware
+    cava
+    tokei
   ];
 }

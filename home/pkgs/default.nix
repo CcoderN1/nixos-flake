@@ -63,5 +63,6 @@
     #gnome-firmware
     cava
     tokei
+    antimicrox
   ];
 }

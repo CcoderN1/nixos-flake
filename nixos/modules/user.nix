@@ -11,6 +11,7 @@
     ignoreShellProgramCheck = true;
   };
   environment.sessionVariables = { 
+    QT_QPA_PLATFORMTHEME = "gnome";
     QT_WAYLAND_DECORATION = "adwaita";
     QT_QPA_PLATFORM = "wayland";
     GDK_BACKEND = "wayland,x11";

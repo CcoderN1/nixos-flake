@@ -9,16 +9,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    /*yandex-browser = { 
+    yandex-browser = { 
       url = "github:miuirussia/yandex-browser.nix"; 
       inputs.nixpkgs.follows = "nixpkgs"; 
-    };*/
+    };
   };
 
   outputs = 
   { self
   , nixpkgs
   , home-manager 
+  , yandex-music
   , ...
   }@inputs: 
   let
@@ -46,6 +47,7 @@
       };
       modules = [
         ./nixos/configuration.nix
+        yandex-music.nixosModules.default
         home-manager.nixosModules.home-manager
         {  
           home-manager = {

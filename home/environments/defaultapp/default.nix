@@ -12,6 +12,11 @@ text/css=org.gnome.TextEditor.desktop;
 text/x-python=org.gnome.TextEditor.desktop;
 text/x-csrc=org.gnome.TextEditor.desktop;
 text/x-devicetree-source=nvim.desktop;
+video/mp4=vlc.desktop;
+video/quicktime=vlc.desktop;
+audio/mp4=vlc.desktop;
+video/x-matroska=vlc.desktop;
+video/webm=vlc.desktop;
 
 [Default Applications]
 text/plain=org.gnome.TextEditor.desktop
@@ -34,5 +39,10 @@ text/x-csrc=org.gnome.TextEditor.desktop
 text/x-devicetree-source=nvim.desktop
 application/x-resolveproj=DaVinciResolve.desktop
 inode/directory=org.gnome.Nautilus.desktop
+video/mp4=vlc.desktop
+video/quicktime=vlc.desktop
+audio/mp4=vlc.desktop
+video/x-matroska=vlc.desktop
+video/webm=vlc.desktop
   '';
 }

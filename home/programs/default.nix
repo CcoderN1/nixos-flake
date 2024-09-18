@@ -10,5 +10,6 @@
     ./ranger
     ./autostart
     ./neovim
+    ./vkBasalt
   ];
 }

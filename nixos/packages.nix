@@ -28,6 +28,7 @@
     qemu
     nvtopPackages.amd
     xorg.xeyes
+    xcb-util-cursor
     #fwupd
   ];
 }

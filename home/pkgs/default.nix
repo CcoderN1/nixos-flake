@@ -64,5 +64,6 @@
     cava
     tokei
     antimicrox
+    appimage-run
   ];
 }

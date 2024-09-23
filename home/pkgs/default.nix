@@ -65,5 +65,6 @@
     tokei
     antimicrox
     appimage-run
+    waydroid
   ];
 }

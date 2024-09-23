@@ -28,6 +28,7 @@
       ./modules/vmware.nix
       ./monitors/gdm/default.nix
       ./mouse_gdm.nix
+      ./modules/virtualisation.nix
       ../overlays/yandex-music.nix
     ];
 
@@ -68,9 +69,4 @@
   hardware.openrazer.enable = true;
   programs.firefox.enable = true;
   system.stateVersion = "${curversion}"; # Did you read the comment?
-
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-  };
 }

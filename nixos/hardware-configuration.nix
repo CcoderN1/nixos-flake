@@ -31,10 +31,10 @@
     options = [ "nosuid" "nodev" "nofail" ];
   };
   
-  fileSystems."/mnt/NTFS" = 
+  fileSystems."/mnt/ssd_120" = 
   {
-    device = "/dev/disk/by-uuid/20E769EE38388B35";
-    fsType = "ntfs";
+    device = "/dev/disk/by-uuid/b4ad82ee-6e32-41e7-b577-7b183d7b7849";
+    fsType = "ext4";
     options = [ "nosuid" "nodev" "nofail" ];
   };
   

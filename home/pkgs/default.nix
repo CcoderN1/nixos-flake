@@ -66,5 +66,9 @@
     antimicrox
     appimage-run
     waydroid
+    blanket
+    protonplus
+    whatsapp-for-linux
+    tor-browser
   ];
 }

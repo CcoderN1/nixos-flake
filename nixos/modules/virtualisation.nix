@@ -7,5 +7,7 @@
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
     waydroid.enable = true;
+    vmware.guest.enable = false;
+    vmware.host.enable = true;
   };
 }

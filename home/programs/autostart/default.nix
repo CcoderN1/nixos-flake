@@ -24,12 +24,12 @@ GenericName[ru]=Центральный контроль
 Comment[ru]=Управляйте своим оборудованием с легкостью, используя профили приложений 
   '';
 
-  home.file.".config/autostart/SpoofDpi.desktop".text = ''
+/*  home.file.".config/autostart/SpoofDpi.desktop".text = ''
 [Desktop Entry]
 Name=SpoofDpi
 Exec=spoofdpi
 Type=Application
 Terminal=false
 Icon=corectrl
-  '';
+  '';*/
 }

@@ -29,6 +29,7 @@
     nvtopPackages.amd
     xorg.xeyes
     xcb-util-cursor
+    obfs4
     #fwupd
   ];
 }

@@ -25,7 +25,6 @@
     tor
     mission-center
     lutris
-    #oh-my-fish
     ntfs3g
     killall
     fastfetch
@@ -33,7 +32,6 @@
     roboto
     kdenlive
     eclipses.eclipse-java
-    #blender-hip
     dconf-editor
     micro
     celluloid
@@ -52,14 +50,12 @@
     krita
     gamescope
     neovim
-    #inputs.yandex-browser.packages.${pkgs.system}.yandex-browser-stable
     nekoray
     jetbrains.idea-ultimate
     jetbrains.webstorm
     jetbrains.phpstorm
     nodejs_22
     php
-    #over-simtoolkitpro
     vkbasalt
     #gnome-firmware
     cava

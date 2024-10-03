@@ -4,14 +4,9 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
-    #yandex-music.url = "github:cucumber-sp/yandex-music-linux";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    yandex-browser = { 
-      url = "github:miuirussia/yandex-browser.nix"; 
-      inputs.nixpkgs.follows = "nixpkgs"; 
     };
   };
 
@@ -20,7 +15,6 @@
   , nixpkgs
   , nixpkgs-stable
   , home-manager 
-  #, yandex-music
   , ...
   }@inputs: 
   let
@@ -35,9 +29,7 @@
       overlays = [
         (final: prev: {
           over-google-chrome = (import ./overlays/chrome.nix { inherit pkgs; });
-          over-vesktop = (import ./overlays/vesktop.nix {inherit pkgs; });
           over-steam = (import ./overlays/steam.nix { inherit pkgs; });
-          over-simtoolkitpro = (prev.callPackage ./overlays/simtoolkitpro.nix {});
         })
       ];
     };
@@ -56,7 +48,6 @@
       };
       modules = [
         ./nixos/configuration.nix
-        #yandex-music.nixosModules.default
         home-manager.nixosModules.home-manager
         {  
           home-manager = {

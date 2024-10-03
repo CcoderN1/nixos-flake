@@ -1,5 +1,6 @@
 { pkgs 
 , inputs
+, stable
 , ...
 }:
 {
@@ -17,7 +18,7 @@
     helvum
     qadwaitadecorations
     qadwaitadecorations-qt6
-    adw-gtk3
+    stable.adw-gtk3
     droidcam
     mangohud
     python3
@@ -70,5 +71,6 @@
     protonplus
     whatsapp-for-linux
     tor-browser
+    cassette
   ];
 }

@@ -30,6 +30,7 @@
     xorg.xeyes
     xcb-util-cursor
     obfs4
+    nh
     #fwupd
   ];
 }

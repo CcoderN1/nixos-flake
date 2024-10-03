@@ -11,6 +11,7 @@
     ignoreShellProgramCheck = true;
   };
   environment.sessionVariables = { 
+    FLAKE = "/home/unixlike/nixos-flake";
     QT_QPA_PLATFORMTHEME = "gnome";
     QT_WAYLAND_DECORATION = "adwaita";
     QT_QPA_PLATFORM = "wayland";

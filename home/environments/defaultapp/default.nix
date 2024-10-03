@@ -17,6 +17,7 @@ video/quicktime=vlc.desktop;
 audio/mp4=vlc.desktop;
 video/x-matroska=vlc.desktop;
 video/webm=vlc.desktop;
+image/webp=org.gnome.Loupe.desktop;
 
 [Default Applications]
 text/plain=org.gnome.TextEditor.desktop
@@ -44,5 +45,6 @@ video/quicktime=vlc.desktop
 audio/mp4=vlc.desktop
 video/x-matroska=vlc.desktop
 video/webm=vlc.desktop
+image/webp=org.gnome.Loupe.desktop
   '';
 }

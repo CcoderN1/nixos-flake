@@ -29,7 +29,7 @@
       ./monitors/gdm/default.nix
       ./mouse_gdm.nix
       ./modules/virtualisation.nix
-      ../overlays/yandex-music.nix
+      #../overlays/yandex-music.nix
     ];
 
   nix = {

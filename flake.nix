@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
-    yandex-music.url = "github:cucumber-sp/yandex-music-linux";
+    #yandex-music.url = "github:cucumber-sp/yandex-music-linux";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,8 +18,9 @@
   outputs = 
   { self
   , nixpkgs
+  , nixpkgs-stable
   , home-manager 
-  , yandex-music
+  #, yandex-music
   , ...
   }@inputs: 
   let
@@ -39,6 +40,13 @@
         })
       ];
     };
+    stable = import nixpkgs-stable {
+      inherit system;
+        config = {
+          allowUnfree = true;
+          rocmSupport = true;
+        };
+    };
   in 
   {
     nixosConfigurations.b450 = nixpkgs.lib.nixosSystem {
@@ -47,14 +55,14 @@
       };
       modules = [
         ./nixos/configuration.nix
-        yandex-music.nixosModules.default
+        #yandex-music.nixosModules.default
         home-manager.nixosModules.home-manager
         {  
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
             users.unixlike = import (./. + "/home/home.nix") ;
-            extraSpecialArgs = { inherit curversion inputs; };
+            extraSpecialArgs = { inherit curversion inputs stable; };
           };
         }
       ];

@@ -11,5 +11,6 @@
     ./autostart
     ./neovim
     ./vkBasalt
+    ./desktop-override/vesktop
   ];
 }

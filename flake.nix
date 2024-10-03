@@ -35,6 +35,7 @@
       overlays = [
         (final: prev: {
           over-google-chrome = (import ./overlays/chrome.nix { inherit pkgs; });
+          over-vesktop = (import ./overlays/vesktop.nix {inherit pkgs; });
           over-steam = (import ./overlays/steam.nix { inherit pkgs; });
           over-simtoolkitpro = (prev.callPackage ./overlays/simtoolkitpro.nix {});
         })

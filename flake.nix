@@ -35,16 +35,16 @@
     };
     stable = import nixpkgs-stable {
       inherit system;
-        config = {
-          allowUnfree = true;
-          rocmSupport = true;
-        };
+      config = {
+        allowUnfree = true;
+        rocmSupport = true;
+      };
     };
   in 
   {
     nixosConfigurations.b450 = nixpkgs.lib.nixosSystem {
       specialArgs = {
-        inherit inputs system pkgs curversion;
+        inherit inputs system pkgs stable curversion;
       };
       modules = [
         ./nixos/configuration.nix

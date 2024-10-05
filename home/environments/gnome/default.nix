@@ -5,7 +5,7 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      icon-theme = "Skeuowaita";
+      icon-theme = "Adwaita";
       gtk-theme = "adw-gtk3-dark";
       clock-format = "24h";
       document-font-name = "Roboto 11";

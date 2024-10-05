@@ -30,6 +30,8 @@
     xcb-util-cursor
     obfs4
     nh
+    gparted
+    ncdu
     #fwupd
   ];
 }

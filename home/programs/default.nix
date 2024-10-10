@@ -1,7 +1,7 @@
 {
   imports = [
     ./mangohud
-    ./steam
+    #./steam
     ./eza
     ./fzf
     ./zoxide

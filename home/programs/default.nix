@@ -12,5 +12,6 @@
     ./neovim
     ./vkBasalt
     ./desktop-override/vesktop
+    ./desktop-override/heroic
   ];
 }

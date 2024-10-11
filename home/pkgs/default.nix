@@ -68,5 +68,6 @@
     whatsapp-for-linux
     tor-browser
     cassette
+    unigine-superposition
   ];
 }

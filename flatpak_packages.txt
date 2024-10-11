@@ -1,0 +1,32 @@
+Flatseal	com.github.tchx84.Flatseal	2.3.0	stable	system
+Minecraft	com.mojang.Minecraft	1.0.1221	stable	system
+Simplenote	com.simplenote.Simplenote	2.21.0	stable	system
+Guilded	gg.guilded.Guilded	1.0.9284034	stable	system
+Soundux	io.github.Soundux	0.2.7	stable	system
+KDiskMark	io.github.jonmagon.kdiskmark	3.1.4	stable	system
+Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-22.08.27	22.08	system
+Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-23.08.23	23.08	system
+i386	org.freedesktop.Platform.Compat.i386		23.08	system
+Mesa	org.freedesktop.Platform.GL.default	24.0.9	22.08	system
+Mesa (Extra)	org.freedesktop.Platform.GL.default	24.0.9	22.08-extra	system
+Mesa	org.freedesktop.Platform.GL.default	24.2.3	23.08	system
+Mesa (Extra)	org.freedesktop.Platform.GL.default	24.2.3	23.08-extra	system
+Mesa	org.freedesktop.Platform.GL.default	24.2.4	24.08	system
+Mesa (Extra)	org.freedesktop.Platform.GL.default	24.2.4	24.08extra	system
+Mesa	org.freedesktop.Platform.GL32.default	24.2.3	23.08	system
+ffmpeg-full	org.freedesktop.Platform.ffmpeg-full		23.08	system
+i386	org.freedesktop.Platform.ffmpeg_full.i386		23.08	system
+openh264	org.freedesktop.Platform.openh264	2.1.0	2.2.0	system
+openh264	org.freedesktop.Platform.openh264	2.4.1	2.4.1	system
+GNOME Application Platform version 46	org.gnome.Platform		46	system
+GNOME Application Platform version 47	org.gnome.Platform		47	system
+adw-gtk3-dark Gtk Theme	org.gtk.Gtk3theme.adw-gtk3-dark		3.22	system
+KDE Application Platform	org.kde.Platform		5.15-23.08	system
+KDE Application Platform	org.kde.Platform		6.7	system
+QGnomePlatform	org.kde.PlatformTheme.QGnomePlatform		5.15-23.08	system
+QAdwaitaDecorations	org.kde.WaylandDecoration.QAdwaitaDecorations		5.15-23.08	system
+QAdwaitaDecorations	org.kde.WaylandDecoration.QAdwaitaDecorations		6.7	system
+QGnomePlatform-decoration	org.kde.WaylandDecoration.QGnomePlatform-decoration		5.15-23.08	system
+Prism Launcher	org.prismlauncher.PrismLauncher	8.4	stable	system
+PortProton	ru.linux_gaming.PortProton	1.7.1	stable	system
+Yandex Browser	ru.yandex.Browser	24.7.3.1253-1	stable	system

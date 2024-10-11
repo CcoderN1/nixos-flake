@@ -69,3 +69,16 @@ xorg-xauth
 xorg-xhost
 zip
 zoxide
+
+
+sudo /usr/bin/perl -pi -e 's/\x74\x11\xe8\x21\x23\x00\x00/\xeb\x11\xe8\x21\x23\x00\x00/g' /opt/resolve/bin/resolve # cracking davinci resolve 19
+
+#AUR PACKAGES
+
+davinci-resolve-studio
+paru
+paru-debug
+selectdefaultapplication-fork-git
+spoofdpi
+truckersmp-cli
+waydroid-script-gi

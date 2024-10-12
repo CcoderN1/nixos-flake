@@ -81,4 +81,4 @@ paru-debug
 selectdefaultapplication-fork-git
 spoofdpi
 truckersmp-cli
-waydroid-script-gi
+waydroid-script-git

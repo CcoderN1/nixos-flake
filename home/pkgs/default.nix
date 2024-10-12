@@ -69,5 +69,7 @@
     tor-browser
     cassette
     unigine-superposition
+    onefetch
+    gimp
   ];
 }

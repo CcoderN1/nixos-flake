@@ -54,6 +54,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
   services.xserver.desktopManager.gnome.enable = true;
+  services.resolved.enable = true; #fix nekoray
   
   services.xserver.xkb = {
     layout = "us";
@@ -67,5 +68,5 @@
   
   hardware.openrazer.enable = true;
   programs.firefox.enable = true;
-  system.stateVersion = "${curversion}"; # Did you read the comment?
+  system.stateVersion = "${curversion}"; 
 }

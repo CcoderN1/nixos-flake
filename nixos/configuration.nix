@@ -12,7 +12,8 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ./packages.nix ./modules/bootloader.nix
+      ./packages.nix 
+      ./modules/bootloader.nix
       ./modules/user.nix
       ./modules/fonts.nix
       ./modules/zram.nix

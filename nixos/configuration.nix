@@ -12,8 +12,7 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ./packages.nix
-      ./modules/bootloader.nix
+      ./packages.nix ./modules/bootloader.nix
       ./modules/user.nix
       ./modules/fonts.nix
       ./modules/zram.nix
@@ -29,6 +28,7 @@
       ./monitors/gdm/default.nix
       ./mouse_gdm.nix
       ./modules/virtualisation.nix
+      ./modules/services.nix
     ];
 
   nix = {
@@ -46,26 +46,9 @@
   networking.hostName = "zimmer"; # Define your hostname.
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Moscow";
-  
   i18n.defaultLocale = "en_US.UTF-8";
-  #driSupport = true;
-  services.xserver.enable = true;
-  #services.xserver.enable = services.xserver.videoDri;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.resolved.enable = true; #fix nekoray
-  
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
   environment.shells = [ pkgs.fish ];
   programs.nix-ld.enable = true;
-  services.printing.enable = true;
-  services.xserver.excludePackages = [ pkgs.xterm ];
-  
   hardware.openrazer.enable = true;
   programs.firefox.enable = true;
   system.stateVersion = "${curversion}"; 

@@ -18,8 +18,6 @@
       ./modules/fonts.nix
       ./modules/zram.nix
       ./modules/sound.nix
-      ./modules/fstrim.nix
-      ./modules/flatpak.nix
       ./modules/gpu.nix
       ./modules/games.nix
       ./modules/security.nix

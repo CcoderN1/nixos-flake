@@ -19,5 +19,7 @@
     };
     resolved.enable = true;
     printing.enable = true;
+    flatpak.enable = true;
+    fstrim.enable = true;
   };
 }

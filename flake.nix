@@ -30,6 +30,7 @@
         (final: prev: {
           over-google-chrome = (import ./overlays/chrome.nix { inherit pkgs; });
           over-steam = (import ./overlays/steam.nix { inherit pkgs; });
+          rewaita = (prev.callPackage ./overlays/rewaita.nix {});
         })
       ];
     };

@@ -5,7 +5,7 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      icon-theme = "Adwaita";
+      icon-theme = "Rewaita";
       gtk-theme = "adw-gtk3-dark";
       clock-format = "24h";
       document-font-name = "Roboto 11";
@@ -36,5 +36,8 @@
     gnomeExtensions.vitals
     gnomeExtensions.gsconnect
     gnomeExtensions.status-area-horizontal-spacing
+    gnomeExtensions.transcodeappsearch
+    gnomeExtensions.media-controls
+    gnomeExtensions.clipboard-history
   ];
 }

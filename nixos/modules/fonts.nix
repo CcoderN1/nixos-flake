@@ -18,6 +18,7 @@
       roboto
       roboto-slab
       fira
+      fira-sans
       fira-code
       fira-code-symbols
       #mplus-outline-fonts.githubRelease

@@ -28,8 +28,6 @@
     ntfs3g
     killall
     fastfetch
-    fira-sans
-    roboto
     kdenlive
     eclipses.eclipse-java
     dconf-editor
@@ -71,5 +69,6 @@
     unigine-superposition
     onefetch
     gimp
+    rewaita
   ];
 }

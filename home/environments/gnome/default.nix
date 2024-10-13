@@ -16,13 +16,6 @@
     "org/gnome/desktop/screensaver" = {
       lock-delay = 0;
     };
-    #"org/gnome/shell" = {
-    #  enabled-extension = [
-    #    "appindicatorsupport@rgcjonas.gmail.com"
-    #    "clipboard-history@alexsaveau.dev"
-    #    "spacing@mathematical.coffee.gmail.com"
-    #  ];
-    #};
   };
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {

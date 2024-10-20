@@ -13,6 +13,7 @@
     ./vkBasalt
     ./virtmanager
     ./fastfetch
+    ./obs
     ./desktop-override/obs
     ./desktop-override/vesktop
     ./desktop-override/heroic

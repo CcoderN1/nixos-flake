@@ -45,7 +45,6 @@
     bat
     tty-clock
     todoist-electron
-    obs-studio
     krita
     gamescope
     neovim

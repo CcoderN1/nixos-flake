@@ -32,6 +32,5 @@
     nh
     gparted
     ncdu
-    #fwupd
   ];
 }

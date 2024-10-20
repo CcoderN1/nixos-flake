@@ -55,7 +55,6 @@
     nodejs_22
     php
     vkbasalt
-    #gnome-firmware
     cava
     tokei
     antimicrox

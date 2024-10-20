@@ -11,6 +11,7 @@
     ./autostart
     ./neovim
     ./vkBasalt
+    ./virtmanager
     ./desktop-override/vesktop
     ./desktop-override/heroic
   ];

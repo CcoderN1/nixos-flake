@@ -3,6 +3,7 @@
     enable = true;
     shellAliases = {
       cat = "bat";
+      fs = "ranger";
      };
     functions = {
       fish_greeting = {

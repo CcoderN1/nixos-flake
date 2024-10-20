@@ -13,6 +13,8 @@
     veracrypt
     p7zip
     gpu-screen-recorder-gtk
+    #gpu-screen-recorder
+    #over-gpu-screen-recorder
     gnome-tweaks
     pavucontrol
     helvum

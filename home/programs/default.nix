@@ -12,6 +12,8 @@
     ./neovim
     ./vkBasalt
     ./virtmanager
+    ./fastfetch
+    ./desktop-override/obs
     ./desktop-override/vesktop
     ./desktop-override/heroic
   ];

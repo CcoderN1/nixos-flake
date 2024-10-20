@@ -17,6 +17,7 @@
       lock-delay = 0;
     };
   };
+  #Qemu/virtmanager dconf setting
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
       autoconnect = ["qemu:///system"];

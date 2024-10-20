@@ -42,7 +42,6 @@
     onlyoffice-bin
     bat
     tty-clock
-    materialgram
     todoist-electron
     obs-studio
     krita
@@ -69,5 +68,6 @@
     onefetch
     gimp
     rewaita
+    telegram-desktop
   ];
 }

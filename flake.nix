@@ -17,7 +17,7 @@
   in 
   {
     nixosConfigurations = {
-      b450-GNOME = mkSystem {
+      b450-gnome = mkSystem {
         hostname = "b450";
       };
       b450-Hyprland = mkSystem {

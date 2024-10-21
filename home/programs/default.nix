@@ -1,3 +1,7 @@
+{ lib
+, envir
+, ...
+}:
 {
   imports = [
     ./mangohud
@@ -17,5 +21,7 @@
     ./desktop-override/obs
     ./desktop-override/vesktop
     ./desktop-override/heroic
+  ] ++ lib.lists.optionals (envir == "Hyprland") [
+    ./waybar
   ];
 }

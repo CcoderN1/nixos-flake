@@ -12,7 +12,8 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/94e4cb99-35f9-4e6b-bb18-34444f187e54";
+    { 
+      device = "/dev/disk/by-uuid/94e4cb99-35f9-4e6b-bb18-34444f187e54";
       fsType = "f2fs";
       options = [ "compress_algorithm=zstd:6" ];
     };

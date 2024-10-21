@@ -1,12 +1,31 @@
-{ lib
-, config
+{ config
 , pkgs
 , deflocale
 , hostname
 , uservars
 , inputs
+, ...
 }:
 {
+  gtk = {
+    enable = true;
+      cursorTheme = {
+      name = "Adwaita";
+      size = 24;
+    };
+  };
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      icon-theme = "Rewaita";
+      gtk-theme = "adw-gtk3-dark";
+      clock-format = "24h";
+      document-font-name = "Roboto 11";
+      font-name = "Fira Sans 10";
+      monospace-font-name = "Fira Code 10 @wght=400";
+      enable-hot-corners = true;
+    };
+  };
   home.packages = with pkgs; [
     rofi-wayland
     kitty
@@ -24,64 +43,20 @@
     alacritty
     clipman
     cliphist
+    gnome-text-editor
   ];
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
     systemd.enable = true;
     xwayland.enable = true;
-    setting = {
-      general = {
-        gaps_in = 5;
-        gaps_out = 10;
-        border_size = 2;
-        "col.active_border" = "rgba(BFBDB6ff)";
-        "col.inactive_border" = "rgba(3A3A3Aff)";
-        layout = "dwindle";
-      };
-      decoration = {
-        rounding = 0;
-        multisample_edges = 2;
-        blur = {
-          enable = true;
-          size = 2;
-          passes = 4;
-          new_optimizations = true;
-        };
-        drop_shadow = yes;
-        shadow_range = 8;
-        shadow_render_power = 5;
-        "col.shadow" = "rgba(2f343fff)";
-      };
-      animations = {
-        enabled = true;
-        bezier = [ 
-          "wind, 0.05, 0.9, 0.1, 1.05"
-          "winIn, 0.1, 1.1, 0.1, 1.1"
-          "winOut, 0.3, -0.3, 0, 1"
-          "liner, 1, 1, 1, 1" 
-        ];
-        animation = [
-          "windows, 1, 6, wind, slide"
-          "windowsIn, 1, 6, winIn, slide"
-          "windowsOut, 1, 5, winOut, slide"
-          "windowsMove, 1, 5, wind, slide"
-          "border, 1, 1, liner"
-          "borderangle, 1, 30, liner, loop"
-          "fade, 1, 10, default"
-          "workspaces, 1, 5, wind"
-        ];
-      };
-    };
     extraConfig = ''
 #Monitors
-monitor=DP-1, 1920x1080@144, 1920x0, 1
-monitor=DP-2, 1920x1080@144, 0x0, 1
-monitor=,preferred,auto,1
-
+source = /home/unixlike/nixos-flake/home/environments/Hyprland/monitor.conf
 #Autostart
 #exec-once = wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
-#exec-once = waybar
+exec-once = waybar
+exec-once = hyprctl setcursor Adwaita 24
 #exec-once = mako
 
 # Floating apps
@@ -140,18 +115,64 @@ windowrulev2 = opacity 0.8, class: corectrl
 windowrulev2 = opacity 0.9, class: steam
 
 input {
-    kb_layout = us,ru
-    kb_variant =
-    kb_model =
-    kb_options = grp:caps_toggle
-    kb_rules =
-    follow_mouse = 1
-    touchpad {
-        natural_scroll = yes
-    }
-    # mouse sensevity
-    accel_profile = flat
-    sensitivity = -0.6
+  kb_layout = us,ru
+  kb_variant =
+  kb_model =
+  kb_options = grp:caps_toggle
+  kb_rules =
+  follow_mouse = 1
+  touchpad {
+    natural_scroll = yes
+  }
+  # mouse sensevity
+  accel_profile = flat
+  sensitivity = -0.6
+}
+
+general {
+  gaps_in = 5
+  gaps_out = 10
+  border_size = 2
+	col.active_border = rgba(BFBDB6ff)
+	col.inactive_border = rgba(3A3A3Aff)
+  layout = dwindle
+	#apply_sens_to_raw=0
+}
+
+decoration {
+	rounding = 0
+
+	blur {
+        enabled = true
+        size = 2
+        passes = 4
+        new_optimizations = true
+	}
+
+    drop_shadow = yes
+    shadow_range = 8
+    shadow_render_power = 5
+    col.shadow = rgba(2f343fff)
+
+    # Dimming inactive windows
+    #dim_inactive = 0
+    #dim_strength = 0.2
+}
+
+animations {
+    enabled = yes
+    bezier = wind, 0.05, 0.9, 0.1, 1.05
+    bezier = winIn, 0.1, 1.1, 0.1, 1.1
+    bezier = winOut, 0.3, -0.3, 0, 1
+    bezier = liner, 1, 1, 1, 1
+    animation = windows, 1, 6, wind, slide
+    animation = windowsIn, 1, 6, winIn, slide
+    animation = windowsOut, 1, 5, winOut, slide
+    animation = windowsMove, 1, 5, wind, slide
+    animation = border, 1, 1, liner
+    animation = borderangle, 1, 30, liner, loop
+    animation = fade, 1, 10, default
+    animation = workspaces, 1, 5, wind
 }
 
 # Tiling mode
@@ -162,20 +183,13 @@ dwindle {
 }
 
 master {
-   
-    new_is_master = 1
-    no_gaps_when_only = true
+  no_gaps_when_only = true
 }
-
 
 
 gestures {
    
     workspace_swipe = on
-}
-
-device:epic mouse V1 {
-    sensitivity = -0.6
 }
 
 #Binds

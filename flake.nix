@@ -10,56 +10,15 @@
     };
   };
 
-  outputs = 
-  { self
-  , nixpkgs
-  , nixpkgs-stable
-  , home-manager 
-  , ...
-  }@inputs: 
+  outputs = { ... }@inputs: 
   let
-    system = "x86_64-linux";
-    curversion = "24.11";
-    pkgs = import nixpkgs {
-      inherit system;
-      config = {
-        allowUnfree = true;
-        rocmSupport = true;
-      };
-      overlays = [
-        (final: prev: {
-          over-google-chrome = (import ./overlays/chrome.nix { inherit pkgs; });
-          over-steam = (import ./overlays/steam.nix { inherit pkgs; });
-          rewaita = (prev.callPackage ./overlays/rewaita.nix {});
-          over-gpu-screen-recorder = (prev.callPackage ./overlays/gpu-screen-recorder.nix {});
-        })
-      ];
-    };
-    stable = import nixpkgs-stable {
-      inherit system;
-      config = {
-        allowUnfree = true;
-        rocmSupport = true;
-      };
-    };
+    mkSystem = (import ./lib/mkHost.nix { inherit inputs; }).mkHost;
   in 
   {
-    nixosConfigurations.b450 = nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        inherit inputs system pkgs stable curversion;
+    nixosConfigurations = {
+      b450 = mkSystem {
+        hostname = "b450";
       };
-      modules = [
-        ./nixos/configuration.nix
-        home-manager.nixosModules.home-manager
-        {  
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.unixlike = import (./. + "/home/home.nix") ;
-            extraSpecialArgs = { inherit curversion inputs stable; };
-          };
-        }
-      ];
     };
   };
 }

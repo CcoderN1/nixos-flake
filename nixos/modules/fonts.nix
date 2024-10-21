@@ -25,6 +25,7 @@
       #dina-font
       proggyfonts
       hack-font
+      open-sans
     ]);
   };
 }

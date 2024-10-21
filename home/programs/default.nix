@@ -23,5 +23,7 @@
     ./desktop-override/heroic
   ] ++ lib.lists.optionals (envir == "Hyprland") [
     ./waybar
+    ./anyrun
+    ./rofi
   ];
 }

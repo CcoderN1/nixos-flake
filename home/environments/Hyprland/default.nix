@@ -36,7 +36,6 @@
     swww
     hyprshot
     hyprpicker
-    anyrun
     gnome-calculator
     nautilus
     eog
@@ -44,6 +43,7 @@
     clipman
     cliphist
     gnome-text-editor
+    swaynotificationcenter
   ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -57,6 +57,7 @@ source = /home/unixlike/nixos-flake/home/environments/Hyprland/monitor.conf
 #exec-once = wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
 exec-once = waybar
 exec-once = hyprctl setcursor Adwaita 24
+exec-once = wl-paste --watch cliphist store
 #exec-once = mako
 
 # Floating apps
@@ -212,11 +213,13 @@ binde=, XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 binde=, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 
 # My binds
+bind = $mainMod, e, exec, nautilus
 bind = $mainMod, b, exec, nautilus ~/buffer
 bind = $mainMod, x, exec, pactl set-source-volume @DEFAULT_SOURCE@ 94%
 bind = $mainMod, m, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle | notify-send "micro muted/unmuted"
 bind = $mainMod, return, exec, kitty
 bind = $mainMod, d, exec, rofi -show drun
+#bind = $mainMod, d, exec, anyrun
 bind = $mainMod SHIFT, q, killactive 
 #bind = $mainMod, z, exec, /home/unix-like/.config/hypr/changeWallpaper2
 bind = $mainMod, z, exec, playerctl play-pause
@@ -288,7 +291,7 @@ bind = $mainMod CTRL, up, resizeactive,0 -50
 bind = $mainMod CTRL, down, resizeactive,0 50
 
 # Rofi power script
-bind = $mainMod, p, exec, ~/.config/waybar/scripts/power-menu/executable_powermenu.sh
+#bind = $mainMod, p, exec, ~/.config/waybar/scripts/power-menu/executable_powermenu.sh
     '';
   };
 }

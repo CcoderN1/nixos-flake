@@ -2,6 +2,7 @@
   description = "unixlike_flake";
 
   inputs = {
+    anyrun.url = "github:anyrun-org/anyrun";
     hyprland.url = "github:hyprwm/Hyprland";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";

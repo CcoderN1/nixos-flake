@@ -54,7 +54,8 @@
 #Monitors
 source = /home/unixlike/nixos-flake/home/environments/Hyprland/monitor.conf
 #Autostart
-#exec-once = wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
+exec-once = swww init
+exec-once = wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
 exec-once = waybar
 exec-once = hyprctl setcursor Adwaita 24
 exec-once = wl-paste --watch cliphist store
@@ -110,7 +111,7 @@ workspace=DP-1, 7
 
 # Blur apps
 windowrulev2 = opacity 0.8, title: New Tab - Google Chrome
-#layerrule = blur, waybar
+layerrule = blur, waybar
 windowrulev2 = opacity 0.9, class: org.gnome.Nautilus
 windowrulev2 = opacity 0.8, class: corectrl
 windowrulev2 = opacity 0.9, class: steam
@@ -134,30 +135,24 @@ general {
   gaps_in = 5
   gaps_out = 10
   border_size = 2
-	col.active_border = rgba(BFBDB6ff)
+	col.active_border = rgba(999696ff)
 	col.inactive_border = rgba(3A3A3Aff)
   layout = dwindle
 	#apply_sens_to_raw=0
 }
 
 decoration {
-	rounding = 0
-
+	rounding = 8
 	blur {
-        enabled = true
-        size = 2
-        passes = 4
-        new_optimizations = true
+    enabled = true
+    size = 2
+    passes = 4
+    new_optimizations = true
 	}
-
-    drop_shadow = yes
-    shadow_range = 8
-    shadow_render_power = 5
-    col.shadow = rgba(2f343fff)
-
-    # Dimming inactive windows
-    #dim_inactive = 0
-    #dim_strength = 0.2
+  drop_shadow = yes
+  shadow_range = 8
+  shadow_render_power = 5
+  col.shadow = rgba(2f343fff)
 }
 
 animations {

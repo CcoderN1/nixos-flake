@@ -188,9 +188,9 @@ entry {
 
 //@theme "/home/unix-like/.local/share/rofi/themes/windows11-list-dark.rasi"
 
-@theme "/home/unix-like/.local/share/rofi/themes/spotlight-dark.rasi"
+@theme "/home/unixlike/.local/share/rofi/themes/saga.rasi"
   '';
-  home.file.".local/share/rofi/themes/saga.rasi" = ''
+  home.file.".local/share/rofi/themes/saga.rasi".text = ''
 /*****----- Configuration -----*****/
 configuration {
   modi:                       "drun,run,filebrowser,window";

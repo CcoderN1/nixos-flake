@@ -2,7 +2,7 @@
   home.file.".config/waybar/config".text = ''
 {
   "layer": "top",
-  "position": "top",
+  "position": "bottom",
 	"modules-left": ["hyprland/workspaces", "custom/playerctl"],
 	"modules-center": ["temperature"],
 	"modules-right": ["tray", "custom/notify", "hyprland/language", "memory", "pulseaudio", "disk", "clock"],
@@ -40,9 +40,7 @@
 	},
 
 },
-    "custom/playerctl": {
-      "format": "{icon}",
-      "return-type": "json",
+    "custom/playerctl": { "format": "{icon}", "return-type": "json",
       "max-length": 64,
       "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
       "on-click": "playerctl play-pause",
@@ -344,15 +342,15 @@
   home.file.".config/waybar/themes/theme.css".text = ''
 /home/unix-like/.config/waybar/themes/IceBerg.css
   '';
-  home.file.".config/waybar/themes/NordIce.css".text = ''
-@define-color bg-color #2C2E38;
+  home.file.".config/waybar/themes/transperent.css".text = ''
+@define-color bg-color #000000;
 @define-color font-color #BFBDB6;
 @define-color bg-workspace-active-color #FFFFFF;
 @define-color font-workspace-active-color #626975;
 @define-color font-workspace-noactive-color #626975;
 @define-color border-color #282828;
-/*@define-color panel-color rgba(0, 0, 0, 0); */
-@define-color panel-color #11151C;
+@define-color panel-color rgba(0, 0, 0, 0);
+/*@define-color panel-color #11151C;*/
   '';
   home.file.".config/waybar/themes/RosePine.css".text = ''
 @define-color bg-color #252235;

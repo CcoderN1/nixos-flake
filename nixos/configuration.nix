@@ -5,6 +5,7 @@
 { config
 , pkgs
 , curversion
+, envir
 , ... 
 }:
 
@@ -28,6 +29,7 @@
       ./mouse_gdm.nix
       ./modules/virtualisation.nix
       ./modules/services.nix
+      ./modules/${envir}.nix
     ];
 
   nix = {

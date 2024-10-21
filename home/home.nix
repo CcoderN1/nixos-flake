@@ -1,11 +1,12 @@
 { curversion
+, envir
 , ...
 }:
 {
   imports = [ 
     ./pkgs
     ./programs
-    ./environments/gnome
+    ./environments/${envir}
     ./environments/defaultapp
   ];
   home = {

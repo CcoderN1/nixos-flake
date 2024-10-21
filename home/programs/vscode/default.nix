@@ -11,6 +11,7 @@
       "editor.fontSize" = "14";
       "editor.fontFamily" = "JetBrainsMono Nerd Font";
       "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font";
+      "editor.tabSize" = "2";
       "extensions.experimental.affinity" = {
         "asvetliakov.vscode-neovim" = 1;
       };

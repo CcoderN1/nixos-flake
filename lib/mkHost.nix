@@ -4,7 +4,7 @@
 {
   mkHost = {
     hostname,
-    envir ? "gnome",
+    envir ? "GNOME",
     system ? "x86_64-linux",
     curversion ? "24.11",
     uservars ? ({
@@ -45,7 +45,7 @@
   in
   inputs.nixpkgs.lib.nixosSystem {
     specialArgs = {
-      inherit inputs system pkgs stable curversion;
+      inherit inputs system pkgs stable curversion envir;
     };
     modules = [
       ./../nixos/configuration.nix
@@ -55,7 +55,7 @@
           useGlobalPkgs = true;
           useUserPackages = true;
           users.unixlike = import (./.. + "/home/home.nix") ;
-          extraSpecialArgs = { inherit curversion inputs stable; };
+          extraSpecialArgs = { inherit curversion inputs stable envir; };
         };
       }
     ];

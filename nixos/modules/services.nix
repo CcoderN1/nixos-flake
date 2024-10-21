@@ -15,7 +15,6 @@
         gdm.enable = true;
         gdm.wayland = true;
       };
-      desktopManager.gnome.enable = true;
     };
     resolved.enable = true;
     printing.enable = true;

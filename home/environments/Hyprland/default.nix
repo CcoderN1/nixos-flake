@@ -7,6 +7,24 @@
 , inputs
 }:
 {
+  home.packages = with pkgs; [
+    rofi-wayland
+    kitty
+    waybar
+    nemo
+    imv
+    grim
+    swww
+    hyprshot
+    hyprpicker
+    anyrun
+    gnome-calculator
+    nautilus
+    eog
+    alacritty
+    clipman
+    cliphist
+  ];
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
@@ -24,7 +42,7 @@
       decoration = {
         rounding = 0;
         multisample_edges = 2;
-        blur {
+        blur = {
           enable = true;
           size = 2;
           passes = 4;
@@ -37,10 +55,12 @@
       };
       animations = {
         enabled = true;
-        bezier = "wind, 0.05, 0.9, 0.1, 1.05";
-        bezier = "winIn, 0.1, 1.1, 0.1, 1.1";
-        bezier = "winOut, 0.3, -0.3, 0, 1";
-        bezier = "liner, 1, 1, 1, 1";
+        bezier = [ 
+          "wind, 0.05, 0.9, 0.1, 1.05"
+          "winIn, 0.1, 1.1, 0.1, 1.1"
+          "winOut, 0.3, -0.3, 0, 1"
+          "liner, 1, 1, 1, 1" 
+        ];
         animation = [
           "windows, 1, 6, wind, slide"
           "windowsIn, 1, 6, winIn, slide"
@@ -52,8 +72,8 @@
           "workspaces, 1, 5, wind"
         ];
       };
-    }
-    extraConfig ''
+    };
+    extraConfig = ''
 #Monitors
 monitor=DP-1, 1920x1080@144, 1920x0, 1
 monitor=DP-2, 1920x1080@144, 0x0, 1

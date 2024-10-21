@@ -70,15 +70,5 @@
     gimp
     rewaita
     telegram-desktop
-    #hyprland packages
-    rofi-wayland
-    kitty
-    waybar
-    nemo
-    imv
-    grim
-    swww
-    hyprshot
-    hyprpicker
   ];
 }

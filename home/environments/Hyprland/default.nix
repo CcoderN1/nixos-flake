@@ -47,6 +47,10 @@
     pywal
     hyprlock
     gnome-system-monitor
+    pulseaudio
+    libnotify
+    wev
+    alsa-utils
   ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -61,7 +65,7 @@ exec-once = swww init
 exec-once = wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
 exec-once = waybar
 exec-once = hyprctl setcursor Adwaita 24
-exec-once = wl-paste --watch cliphist store
+#exec-once = wl-paste --watch cliphist store
 #exec-once = mako
 
 # Floating apps
@@ -109,9 +113,9 @@ workspace = 5, monitor:DP-2
 workspace = 6, monitor:DP-2
 workspace = 7, monitor:DP-2
 
-workspace = 8, monitor:DP-1
-workspace = 9, monitor:DP-1
 workspace = 10, monitor:DP-1
+workspace = 9, monitor:DP-1
+workspace = 8, monitor:DP-1
 
 # Blur apps
 windowrulev2 = opacity 0.8, title: New Tab - Google Chrome
@@ -139,7 +143,7 @@ general {
   gaps_in = 5
   gaps_out = 10
   border_size = 2
-	col.active_border = rgba(999696ff)
+	col.active_border = rgba(F0BD66ff)
 	col.inactive_border = rgba(3A3A3Aff)
   layout = dwindle
 	#apply_sens_to_raw=0
@@ -214,8 +218,9 @@ binde=, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 # My binds
 bind = $mainMod, e, exec, nautilus
 bind = $mainMod, b, exec, nautilus ~/buffer
-bind = $mainMod, x, exec, pactl set-source-volume @DEFAULT_SOURCE@ 94%
-bind = $mainMod, m, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle | notify-send "micro muted/unmuted"
+bind = $mainMod, x, exec, pactl set-source-volume @DEFAULT_SOURCE@ 100%
+bind = ,XF86Launch5, exec, amixer set Master toggle | notify-send "speakers toggled"
+bind = ,XF86Launch6, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle | notify-send "microphone toggled"
 bind = $mainMod, return, exec, kitty
 bind = $mainMod, d, exec, rofi -show drun
 #bind = $mainMod, d, exec, anyrun
@@ -226,10 +231,10 @@ bind = $mainMod SHIFT, space, togglefloating
 bind = $mainMod, F, fullscreen
 bind = $mainMod, e, exec, /usr/bin/nautilus
 bind = $mainMod, n, exec, clipman pick --tool="rofi" --max-items=30
-bind = $mainMod ,Print, exec, HYPRSHOT_DIR=/home/unixlike/Pictures/screens hyprshot -c -m output -z
-bind = ,Print, exec, HYPRSHOT_DIR=/home/unixlike/Pictures/hyprshot hyprshot -c -m output
-bind = ,F10,pass,^(com\.obsproject\.Studio)$
-bind = ,XF86Launch5,pass,^(discord)$
+bind = $mainMod ,Print, exec, HYPRSHOT_DIR=/home/unixlike/Pictures/screens hyprshot -c -m region -z
+bind = ,Print, exec, HYPRSHOT_DIR=/home/unixlike/Pictures/hyprshot hyprshot -c -m output -z
+bind = ALT,F9,pass,^(com\.obsproject\.Studio)$
+#bind = ,XF86Launch5,pass,^(discord)$
 bind = $mainMod, c, exec, hyprpicker -a
 bind = ALT,Tab,cyclenext
 bind = $mainMod, v, exec, swaync-client -t -sw

@@ -44,6 +44,8 @@
     cliphist
     gnome-text-editor
     swaynotificationcenter
+    pywal
+    hyprlock
   ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -98,16 +100,17 @@ windowrule=workspace 3 silent, steam
 #windowrulev2=workspace 8 silent, class: org.telegram.desktop
 
 # Associate monitors with workspaces
-workspace=DP-2, 10
-workspace=DP-2, 9
-workspace=DP-2, 8
-workspace=DP-1, 1
-workspace=DP-1, 2
-workspace=DP-1, 3
-workspace=DP-1, 4
-workspace=DP-1, 5
-workspace=DP-1, 6
-workspace=DP-1, 7
+workspace = 1, monitor:DP-2
+workspace = 2, monitor:DP-2
+workspace = 3, monitor:DP-2
+workspace = 4, monitor:DP-2
+workspace = 5, monitor:DP-2
+workspace = 6, monitor:DP-2
+workspace = 7, monitor:DP-2
+
+workspace = 8, monitor:DP-1
+workspace = 9, monitor:DP-1
+workspace = 10, monitor:DP-1
 
 # Blur apps
 windowrulev2 = opacity 0.8, title: New Tab - Google Chrome
@@ -222,8 +225,8 @@ bind = $mainMod SHIFT, space, togglefloating
 bind = $mainMod, F, fullscreen
 bind = $mainMod, e, exec, /usr/bin/nautilus
 bind = $mainMod, n, exec, clipman pick --tool="rofi" --max-items=30
-bind = $mainMod ,Print, exec, HYPRLAND_INTERACTIVE_SCREENSHOT_SAVEDIR=/home/unix-like/Pictures/screens /usr/bin/hyprland-interactive-screenshot
-bind = ,Print, exec, HYPRSHOT_DIR=/home/unix-like/Pictures/hyprshot /usr/bin/hyprshot -c -m output
+bind = $mainMod ,Print, exec, HYPRSHOT_DIR=/home/unixlike/Pictures/screens hyprshot -c -m output -z
+bind = ,Print, exec, HYPRSHOT_DIR=/home/unixlike/Pictures/hyprshot hyprshot -c -m output
 bind = ,F10,pass,^(com\.obsproject\.Studio)$
 bind = ,XF86Launch5,pass,^(discord)$
 bind = $mainMod, c, exec, hyprpicker -a
@@ -285,8 +288,22 @@ bind = $mainMod CTRL, right, resizeactive,50 0
 bind = $mainMod CTRL, up, resizeactive,0 -50
 bind = $mainMod CTRL, down, resizeactive,0 50
 
-# Rofi power script
-#bind = $mainMod, p, exec, ~/.config/waybar/scripts/power-menu/executable_powermenu.sh
+#dop workspaces
+
+bind = $mainMod, A, togglespecialworkspace, as
+bind = $mainMod SHIFT, A, movetoworkspace, special:as
+
+bind = $mainMod, Z, togglespecialworkspace, zs
+bind = $mainMod SHIFT, Z, movetoworkspace, special:zs
+
+bind = $mainMod, X, togglespecialworkspace, xs
+bind = $mainMod SHIFT, X, movetoworkspace, special:xs
+
+bind = $mainMod CTRL, A, movetoworkspace,e+0
+bind = $mainMod CTRL, X, movetoworkspace,e+0
+bind = $mainMod CTRL, Z, movetoworkspace,e+0
+
+bind = $mainMod, p, exec, hyprlock
     '';
   };
 }

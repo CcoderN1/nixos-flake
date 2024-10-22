@@ -25,5 +25,8 @@
     ./waybar
     ./anyrun
     ./rofi
+    ./kitty
+    ./swaync
+    ./hyprlock
   ];
 }

@@ -1,369 +1,302 @@
+{pkgs, ... }:
 {
-  home.file.".config/waybar/config".text = ''
-{
-  "layer": "top",
-  "position": "bottom",
-	"modules-left": ["hyprland/workspaces", "custom/playerctl"],
-	"modules-center": ["temperature"],
-	"modules-right": ["tray", "custom/notify", "hyprland/language", "memory", "pulseaudio", "disk", "clock"],
-    //	Modules configuration
-	"clock": {
-	"format": "󱑂 {:%H:%M:%S}",
-	"interval": 1,
-	"tooltip": "false",
-//      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": " {:%d/%m/%Y}",
-	"on-click-right": "gsimplecal"
-	},
+  programs.waybar = {
+    enable = true;
+    package = pkgs.waybar;
+  };
+  home.file.".config/waybar/config.jsonc".text = ''// -*- mode: jsonc -*-
+{	
+		"width": 920,
+		"height": 0,
+    "layer": "top",
+    "position": "bottom",
+		"exclusive": true,
+		"passthrough": false,
+		"spacing": 5,
+		"margin-bottom": 0,
+		"margin-top": 0,
+		"fixed-center": true,
+		"reload_style_on_change": true,
+		"modules-left": ["hyprland/workspaces"],
+		"modules-center": ["custom/notifications","clock","group/powerB"],
+		"modules-right": ["group/ttray"],
 
-	"hyprland/language": {
-        "format": "{}",
-        "format-en": "en",
-        "format-ru": "ru",
-        },
 
-	"hyprland/workspaces": {
-        "active-only": false,
+
+"hyprland/workspaces": {
+  "disable-scroll": true,
+  "show-special": true,
+  "on-scroll-up": "hyprctl dispatch workspace -1",
+  "on-scroll-down": "hyprctl dispatch workspace +1",
 	"format": "{icon}",
-	"on-click": "activate",
-	"format-icons": {
-	  "1": "1",
-    "2": "2",
-    "3": "3",
-    "4": "4",
-    "5": "5",
-    "6": "6",
-    "7": "7",
-    "8": "8",
-    "9": "9",
-		"10": "10",
+		"format-icons": {
+			"1": "",
+			"2": "",
+			"3": "",
+			"4": "",
+			"5": "",
+			"6": "",
+			"7": "",
+			"8": "",
+			"9": "",
+			"10": "",
+			"special": "",
+		},
+       "persistent-workspaces": {
+             "*": 1
+       }
+},
+
+
+	"network": {
+        	"format-wifi": "󰤨 ",
+        	"format-ethernet": "󰈀 ",
+        	"format-linked": "󰈀 ",
+        	"format-disconnected": "󰤭",
 	},
+
+ 
+  "custom/notifications": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='#DB4740'><sup></sup></span>",
+      "none": "󰂜",
+      "dnd-notification":"<span foreground='#DB4740'><sup>󰵚</sup></span>",
+      "dnd-none": "󰂛",
+      "inhibited-notification": "<span foreground='#DB4740'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='#DB4740'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+"group/powerB": {
+	 "orientation": "horizontal",
+	 "drawer": {
+         "transition-duration": 500,
+         "transition-left-to-right": true,
+     	 },
+	 
+	 "modules": [
+	"hyprland/language",
+	"custom/power",
+        "custom/lock",
+        "custom/reboot",
+        "custom/logout",
+        "custom/sleep"
+    ]
 
 },
-    "custom/playerctl": { "format": "{icon}", "return-type": "json",
-      "max-length": 64,
-      "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-      "on-click": "playerctl play-pause",
-      "on-click-right": "playerctl next",
-      "on-click-middle": "playerctl next",
-      "format-icons": {
-        "Playing": "<span foreground='#FFFFFF'>󰒮 󰐌 󰒭</span>",
-        "Paused": "<span foreground='#EBBCBA'>󰒮 󰏥 󰒭</span>"
-      },
-    },
+"custom/power": {
+"format": "  ",
+"on-double-click": "systemctl poweroff",
+},
+"custom/lock": {
+"format": "  ",
+"on-double-click": "hyprlock",
+},
 
-  "memory": {
-    "format": "󰻠 {used}",
-    "interval": 5
-  },
+"custom/reboot": {
+"format": "  ",
+"on-double-click": "systemctl reboot",
+},
 
-  "cpu": {
-    "format": "CPU: {usage}%",
-    "format-alt": "CPU: {avg_frequency} GHz",
-    "interval": 5
-  },
+"custom/logout": {
+"format": " 󰍃 ",
+"on-double-click": "hyprctl dispatch exit",
+},
 
-  "disk": {
-    "format": "󰋊 {free}",
-    "interval": 30,
-    "path": "/home/unix-like"
-  },
+"custom/sleep": {
+"format": "󰒲 ",
+"on-double-click": "systemctl suspend & hyprlock",
+},
+
+	"group/ttray": {
+		"orientation": "horizontal",
+		"modules": [
+			"tray",
+			"battery",
+			"backlight",
+			"pulseaudio",
+			"network"
+		]
+	},
 	"tray": {
 		"icon-size": 16,
-		"spacing": 5
+		"spacing": 8,
+		"icon-theme": "Skeuowaita"
 	},
-
-    "pulseaudio": {
-		"format": "{icon} {volume}% {format_source}",
-        	"format-muted": "󰝟",
-		"format-source": " {volume}%",
-		"format-source-muted": " MUTE ",
-		"format-icons": {
-		"default": ["󰕿", "󰖀", "󰕾"]
+    
+		"clock": {
+			"format": "{:%H:%M:%S}",
+			"tooltip-format": "{:%OI:%M:%S}",
+   		"timezone": "Europe/Riga",
+    		"interval": 1,
+		"tooltip": "false",
+        	"format-alt": "{:%d.%m.%y}",
+    "on-click-right": "bash ~/.config/rofi/calendar/calendar.sh"
 
 		},
-		  "scroll-step": 5,
-        "on-click": "pavucontrol",
-        "ignored-sinks": ["Easy Effects Sink"]
+
+	
+     "pulseaudio": {
+		"format": " {icon} {volume} {format_source}",
+        	"format-muted": "󰝟 ",
+		"format-source": "󰍬 ",
+		"format-source-muted": "󰍭 ",
+		"format-icons": {
+		"default": ["󰕿 ", "󰖀 ", "󰕾 "]},
+		"on-click": "pavucontrol",
+    		"tooltip-format": "{volume}%"
   },
-	"temperature": {
-	//	"hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input",
-		"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-		"format": "CPU: {temperatureC}°C ",
-		"interval": 5,
-	},
-	
-	"custom/tempgpu": {
-	"exec": "/home/unix-like/.local/bin/gputemp",
-	"format": "GPU: {}°C ",
-	"interval": 5,
-	},
-	
-	"custom/fan": {
-	"exec": "sensors | awk '/fan1:/ {print $2}'",
-	"format": "RPM: {} ",
-	"interval": 5,
-	},
-
-	"custom/gpu-usage": {
-	"exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
-	"format": "GPU: {}%",
-    	"interval": 5,
-	},
-	
-	"custom/notify":{
-	"format": "󰂚",
-    	"format-alt": "󰂛",
-    	"on-click": "dunstctl set-paused toggle"
+ 
+        	
+    	"hyprland/language": {
+        	"format": "{}",
+			"format-en": "en",
+			"format-ru": "ru"
+			    	},
+    "battery": {
+	    "interval": 5,
+        "states": {
+            "warning": 40,
+            "critical": 25
+        },
+        "format": "  {icon}  {capacity}",
+	"format-alt": "{icon}  {capacity}",
+        "format-charging":"{icon} ",
+        "format-plugged": "{icon} ",
+        "format-full": "{icon} !",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "{}"
     },
-  }
+
+    "backlight": {
+    "device": "intel_backlight",
+"format": "{percent} {icon}",
+    "format-icons": ["󰃜","󰃝","󰃞"],
+    "on-scroll-up":   "brightnessctl s 1%+",
+    "on-scroll-down": "brightnessctl s 1%-",
+    "on-click-right": "brightnessctl s 0"
+},
+
 }
-  '';
-#   home.file.".config/waybar/style.css".text = ''
-# * {
-#     border: none;
-#     border-radius: 0px;
-#     font-family: Iosevka;
-#     font-size: 12px;
-#     font-style: normal;
-#     min-height: 0;
-# }
+'';
 
-# @import "themes/NordIce.css";
+home.file.".config/waybar/style.css".text = ''* {
+	font-family: google-sans;
+	font-weight: bold;
+	min-height: 0;
+	border-radius: 16 16 0 0;
+}
 
-# window#waybar {
-#     background: @panel-color;
-#     border-bottom: 0px solid #000000;
-#     color: @bg-color;
-# }
+window#waybar {
+	background-color: @background;
+	transition-property: background-color;
+	transition-duration: .5s;
+}
 
-# #workspaces {
-#     color: @font-workspace-noactive-color;
-#     border-radius: 6px;
-#     background: @bg-color;
-#     margin: 5px 5px 5px 5px;
-#     padding: 0px 5px;
-#     border: solid 1px @border-color;
-#     font-weight: bold;
-#     font-style: normal;
-#     font-size: 12px;
-# }
+@import "/home/unixlike/.cache/wal/colors-waybar.css";
 
-# #workspaces button {
-#     padding: 0px 5px;
-#     border-radius: 6px;
-#     color: @font-color;
-#     /* color: black; */
-#     background-color: transparent;
-#     text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
-# }
 
-# #workspaces button.active {
-#     transition: ease 0.3s;
-#     color: @font-workspace-active-color; 
-#     background: @bg-workspace-active-color;
-#     border-radius: 6px;
-#     text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
-# }
+#workspaces {
+	background-color: @background;
+	font-family: 'Symbols Nerd Font';
+	font-size: 13pt;
+	padding: 0 0 0 8;
+}
 
-# #workspaces button:hover {
-# 	color: #626975;
-# }
+#workspaces button {
+    padding: 0 0 0 6;
+    margin: 8px 3px;
+    border-radius: 32px;
+    color: @color11;
+    background-color: @color4;
+        transition: all 0.3s ease-in-out;
 
-# #custom-date, #clock, #custom-randwall, #custom-launcher {
-# 	background: transparent;
-# 	padding: 5px 5px 5px 5px;
-# 	margin: 5px 5px 5px 5px;
-#   border-radius: 6px;
-#   border: solid 0px #EBDBB2;
-# }
+}
 
-# #custom-date {
-# 	color: #D3869B;
-# }
+#workspaces button:hover {
+	background-color: @color2;
+	color: @color2;
+	border-radius: 16;
 
-# #custom-power {
-# 	color: #24283b;
-# 	background-color: #db4b4b;
-# 	border-radius: 5px;
-# 	margin-right: 10px;
-# 	margin-top: 5px;
-# 	margin-bottom: 5px;
-# 	margin-left: 0px;
-# 	padding: 5px 10px;
-# }
+}
 
-# #tray {
-#     background: @bg-color;
-#     margin: 5px 5px 5px 5px;
-#     border-radius: 6px;
-#     padding: 0px 5px;
-#     /*border-right: solid 1px #1D1D1D;*/
-#     border: solid 1px #282828;
-# }
+#workspaces button.active {
+    background-color: @color2;
+    padding: 0px 16px;
+    border-radius: 16px;
+    opacity: 1.0;
+        transition: all 0.3s ease-in-out;
 
-# #clock {
-#     color: @font-color;
-#     background: @bg-color;
-#     margin: 5px 5px 5px 5px;
-#     border-radius: 6px;
-#     padding: 0px 5px;
-#     border: solid 1px #282828;
-#      font-weight: bold;
-#   font-style: normal;
-#   font-size: 12px;
-# }
+}
 
-# #backlight {
-#     background-color: #24283b;
-#     color: #db4b4b;
-#     border-radius: 0px 0px 0px 0px;
-#     margin: 5px;
-#     margin-left: 0px;
-#     margin-right: 0px;
-#     padding: 0px 0px;
-# }
+#tray {
+	background: @background;
+	color: @color9;
+	font-size: 14px;
+	padding: 0 8 0 8px;
+	margin: 5 10px;
+	border: solid 2px @color2;
+	border-radius: 12;
 
-# #bluetooth {
-#     color: @font-color;
-#     border-radius: 8px;
-#     margin-left: 10px;
-#     margin-right: -5px;
-#     text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
-# }
+}
+#battery {
+	background: @background;
+	color: @color6;
+	padding: 0 0 0 0;
+}
 
-# #bluetooth.connected {
-#     color: #B8BB26;
-#     border-radius: 8px;
-# }
+#network {
+	background: @background;
+	color: @color6;
+	padding: 0 8 0 0;
+}
 
-# #bluetooth.off {
-#     color: #928374;
-#     border-radius: 8px;
-# }
-# #network, #pulseaudio,#language{
-#     color: @font-color;
-#     background: @bg-color;
-#     margin: 5px 5px 5px 5px;
-#     border-radius: 6px;
-#     padding: 0px 5px;
-#     border: solid 1px #282828;
-#      font-weight: bold;
-#   font-style: normal;
-#   font-size: 12px;
-# }
+#custom-notifications {
+	color: @color2;
+	padding: 5 8 5 5;
+	font-size: 14pt;
+}
 
-# #custom-playerctl {
-# 	background: @bg-color;
-# 	padding-left: 15px;
-# 	padding-right: 14px;
-# 	border-radius: 6px;
-#   /*border-left: solid 1px #1D1D1D;*/
-#   /*border-right: solid 1px #1D1D1D;*/
-#   margin-top: 5px;
-#   margin-bottom: 5px;
-#   margin-left: 0px;
-#   font-weight: normal;
-#   font-style: normal;
-#   font-size: 12px;
-#   /* Add a shadow to the bakground */
-#   /* box-shadow: 0px 1px 1px #EBDBB2; */
-#   border: 1px solid #282828;
-# }
+#pulseaudio {
+	background: @background;
+	color: @color6;
+	padding: 0 8 0 0;
+	font-size: 15;
+}
 
-# #custom-playerlabel {
-#     background: transparent;
-#     padding-left: 10px;
-#     padding-right: 15px;
-#     border-radius: 6px;
-#     /*border-left: solid 1px #1D1D1D;*/
-#     /*border-right: solid 1px #1D1D1D;*/
-#     margin-top: 5px;
-#     margin-bottom: 5px;
-#     font-weight: bold;
-#     font-style: normal;
-#     text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
-# }
+#clock {
+	background: @background;
+	color: @color6;
+	font-size: 17px;
+	padding: 5 5px;
 
-# #window {
-#     background: #000000;
-#     padding-left: 15px;
-#     padding-right: 15px;
-#     border-radius: 6px;
-#     /*border-left: solid 1px #1D1D1D;*/
-#     /*border-right: solid 1px #1D1D1D;*/
-#     margin-top: 5px;
-#     margin-bottom: 5px;
-#     font-weight: normal;
-#     font-style: normal;
-# }
+}
 
-# #custom-wf-recorder {
-#     padding: 0 20px;
-#     color: #CC241D;
-#     background-color: #000000;
-# }
+#language {
+	background: @background;
+	color: @color6;
+	padding: 0 5 0 8;
+	margin: 1 10 1 1px;
+	font-size: 16px;
+	border-radius: 6
+}
+#backlight {
+	background: @background;
+	color: @color6;
+	padding: 0 0 0 10;
+	margin: 1 10 1 1px;
+	font-size: 16px;
+	border-radius: 6
 
-# #cpu {
-#     background-color: @bg-color;
-#     color: @font-color;
-#     border-radius: 6px;
-#     margin: 5px;
-#     margin-left: 5px;
-#     margin-right: 5px;
-#     padding: 0px 10px 0px 10px;
-#     font-weight: bold;
-#     border: 1px solid #282828;
-# }
-# #custom-cava{
-#     background-color: #000000;
-#     /*color: #FABD2D;*/
-#     border-radius: 6px;
-#     margin: 5px;
-#     margin-left: 5px;
-#     margin-right: 5px;
-#     padding: 0px 10px 0px 10px;
-#     font-weight: bold;
-#     border: 1px solid #282828;
-# }
-
-# #custom-gpu-usage, #custom-notify, #custom-fan, #custom-tempgpu, #temperature, #disk, #memory {
-#     background-color: @bg-color;
-#     color: @font-color;
-#     border-radius: 6px;
-#     margin: 5px;
-#     margin-left: 5px;
-#     margin-right: 5px;
-#     padding: 0px 10px 0px 10px;
-#     font-weight: bold;
-#     border: 1px solid #282828;
-# }
-#   '';
-  home.file.".config/waybar/themes/theme.css".text = ''
-/home/unix-like/.config/waybar/themes/IceBerg.css
-  '';
-  home.file.".config/waybar/themes/transperent.css".text = ''
-@define-color bg-color #000000;
-@define-color font-color #BFBDB6;
-@define-color bg-workspace-active-color #FFFFFF;
-@define-color font-workspace-active-color #626975;
-@define-color font-workspace-noactive-color #626975;
-@define-color border-color #282828;
-@define-color panel-color rgba(0, 0, 0, 0);
-/*@define-color panel-color #11151C;*/
-  '';
-  home.file.".config/waybar/themes/RosePine.css".text = ''
-@define-color bg-color #252235;
-@define-color font-color #C4A7E7;
-@define-color bg-workspace-active-color #5b396e;
-@define-color font-workspace-active-color #c4bdff;
-@define-color font-workspace-noactive-color #B8BB26;
-  '';
-  home.file.".config/waybar/themes/IceBerg.css".text = ''
-@define-color bg-color #1F2531;
-@define-color font-color #BFBDB6;
-@define-color bg-workspace-active-color #FFFFFF;
-@define-color font-workspace-active-color #626975;
-@define-color font-workspace-noactive-color #626975;
-  '';
+}
+'';
 }

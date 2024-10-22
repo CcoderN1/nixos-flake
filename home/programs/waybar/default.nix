@@ -124,7 +124,8 @@
 			"battery",
 			"backlight",
 			"pulseaudio",
-			"network"
+			"network",
+			"disk"
 		]
 	},
 	"tray": {
@@ -185,7 +186,11 @@
     "on-scroll-down": "brightnessctl s 1%-",
     "on-click-right": "brightnessctl s 0"
 },
-
+	"disk": {
+  	"format": "󰋊 {free}",
+		"interval": 30,
+		"path": "/home/unixlike"
+	},
 }
 '';
 
@@ -254,7 +259,7 @@ window#waybar {
 	padding: 0 0 0 0;
 }
 
-#network {
+#network, #disk {
 	background: @background;
 	color: @color6;
 	padding: 0 8 0 0;

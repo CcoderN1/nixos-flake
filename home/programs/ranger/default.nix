@@ -4,27 +4,77 @@
 }:
 {
   home.file.".config/ranger/rc.conf".text = ''
-map gc cd ~/.config
-map gC cd ~/.config/hypr/
-map gW cd ~/.config/waybar/
-map gb cd /mnt/bine4
+# icons ranger
+default_linemode devicons
+
+#Images preview
+set preview_images true
+set preview_images_method kitty
+set preview_script ~/nixos-flake/not_dec_configs/scripts/scope.sh
+
+#Hidde files
+set show_hidden true
+
+# cd
 map gr cd ~/.config/ranger
 map gd cd ~/Downloads
-map gD cd ~/Documents
+map gc cd ~/.config
+map gH cd /mnt/hdd
+map gk cd /mnt/kingston
+map gb cd ~/buffer
+map gs cd /mnt/hdd/sway_backup
+map gy cd ~/Yandex.Disk
+map gt cd ~/tmp
+map gv cd ~/Videos
+map gw cd /mnt/hdd/wallpaper
 map gp cd ~/Pictures
-map gm cd /mnt/
-map gt cd ~/Templates
-map gl cd ~/.local/share
-map zz shell zip archive.zip %s
-map zt shell tar -cvzf archive.tar.gz %s
-map zx shell 7z a archive.7z %s
-map D delete %s
-map F shell file-roller %s
-map X shell du -sh %s && sleep 1
-map x shell nvim %s
-map o shell ./%s
-map P shell nemo .
-copymap zi Z
-map <C-F> shell fzf 
+map gm cd /mnt
+map ga cd ~/.config/waybar
+copymap G ge
+
+#archive
+map zz shell 7z a archive.7z %s
+
+#Delete
+map D shell -s trash-put %s &
+
+#Search fzf
+map <C-f> fzf
+
+#Copy
+map cb shell cp -r %s ~/buffer
+map ct shell cp -r %s ~/tmp
+
+# open images through shell
+map F shell imv %s &
+
+# Launch app
+map x shell ./%s &
+
+# Space folder
+map cv shell du -sh %s;sleep 1
+map cx shell nautilus .
+  '';
+
+  home.file.".config/ranger/rifle.conf".text = ''
+ext pdf, has evince, X, flag f = evince "$@"
+ext img, has imv, X, flag f = imv "$@"
+ext jpg, has imv, X, flag f = imv "$@"
+ext jpeg, has imv, X, flag f = imv "$@"
+ext png, has imv, X, flag f = imv "$@"
+ext zip, has file-roller, X, flag f = file-roller "$@"
+ext 7z, has file-roller, X, flag f = file-roller "$@"
+ext tar, has file-roller, X, flag f = file-roller "$@"
+ext mp4, has mpv, X, flag f = mpv "$@"
+ext mkv, has mpv, X, flag f = mpv "$@"
+ext webm, has mpv, X, flag f = mpv "$@"
+ext mp3, has mpv, X, flag f = mpv "$@"
+ext mov, has mpv, X, flag f = mpv "$@"
+ext m4a, has mpv, X, flag f = mpv "$@"
+ext svg, has imv, X, flag f = imv "$@"
+ext rar, has file-roller, X, flag f = file-roller "$@"
+
+label editor = "$EDITOR" -- "$@"
+label pager  = "$PAGER" -- "$@"
   '';
 }

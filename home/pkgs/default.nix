@@ -70,5 +70,6 @@
     gimp
     rewaita
     telegram-desktop
+    ffmpegthumbnailer
   ];
 }

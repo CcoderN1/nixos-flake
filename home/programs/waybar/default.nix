@@ -124,8 +124,8 @@
 			"battery",
 			"backlight",
 			"pulseaudio",
-			"network",
-			"disk"
+			"disk",
+			"network"
 		]
 	},
 	"tray": {

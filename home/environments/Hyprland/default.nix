@@ -60,6 +60,7 @@
     extraConfig = ''
 #Monitors
 source = /home/unixlike/nixos-flake/home/environments/Hyprland/monitor.conf
+#source = /home/unixlike/.config/hypr/test.conf
 #Autostart
 exec-once = swww init
 exec-once = wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
@@ -98,6 +99,8 @@ windowrulev2 = center, class: org.prismlauncher.PrismLauncher
 #windowrule = size 810 610, kitty
 
 # Associate apps with worspaces
+#windowrulev2 = renderunfocused, class: X-Plane
+#windowrulev2 = renderunfocused, title: X-System
 windowrulev2=workspace 2 silent, class: X-Plane
 windowrulev2=workspace 1, class: google-chrome
 windowrule=workspace 9, obs

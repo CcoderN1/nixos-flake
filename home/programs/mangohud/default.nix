@@ -6,6 +6,7 @@
 toggle_fps_limit=F8
 fps_limit=200,144,90,63,30
 
+no_display
 legacy_layout=false
 gpu_stats
 gpu_temp

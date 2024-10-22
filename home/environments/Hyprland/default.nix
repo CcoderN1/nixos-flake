@@ -46,6 +46,7 @@
     swaynotificationcenter
     pywal
     hyprlock
+    gnome-system-monitor
   ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -231,6 +232,7 @@ bind = ,F10,pass,^(com\.obsproject\.Studio)$
 bind = ,XF86Launch5,pass,^(discord)$
 bind = $mainMod, c, exec, hyprpicker -a
 bind = ALT,Tab,cyclenext
+bind = $mainMod, v, exec, swaync-client -t -sw
 
 # Moving between desktops
 bind = $mainMod, 1, workspace, 1

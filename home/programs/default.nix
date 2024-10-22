@@ -18,6 +18,7 @@
     ./virtmanager
     ./fastfetch
     ./obs
+  ] ++ lib.lists.optionals (envir == "gnome") [
     ./desktop-override/obs
     ./desktop-override/vesktop
     ./desktop-override/heroic

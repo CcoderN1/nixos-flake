@@ -122,7 +122,7 @@ windowrulev2 = opacity 0.8, title: New Tab - Google Chrome
 layerrule = blur, waybar
 windowrulev2 = opacity 0.9, class: org.gnome.Nautilus
 windowrulev2 = opacity 0.8, class: corectrl
-windowrulev2 = opacity 0.9, class: steam
+#windowrulev2 = opacity 0.9, class: steam
 
 input {
   kb_layout = us,ru

@@ -231,7 +231,7 @@ bind = $mainMod SHIFT, space, togglefloating
 bind = $mainMod, F, fullscreen
 bind = $mainMod, e, exec, /usr/bin/nautilus
 #bind = $mainMod, n, exec, clipman pick --tool="rofi" --max-items=30
-bind = $mainMod, n, exec, cliphist list | anyrun --show-results-immediately true | cliphist decode | wl-
+bind = $mainMod, n, exec, cliphist list | anyrun --show-results-immediately true | cliphist decode | wl-copy
 bind = $mainMod ,Print, exec, HYPRSHOT_DIR=/home/unixlike/Pictures/screens hyprshot -c -m region -z
 bind = ,Print, exec, HYPRSHOT_DIR=/home/unixlike/Pictures/hyprshot hyprshot -c -m output -z
 bind = ALT,F9,pass,^(com\.obsproject\.Studio)$

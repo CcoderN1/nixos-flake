@@ -63,10 +63,10 @@ source = /home/unixlike/nixos-flake/home/environments/Hyprland/monitor.conf
 #source = /home/unixlike/.config/hypr/test.conf
 #Autostart
 exec-once = swww init
-exec-once = wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
+#exec-once = wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
 exec-once = waybar
 exec-once = hyprctl setcursor Adwaita 24
-#exec-once = wl-paste --watch cliphist store
+exec-once = wl-paste --watch cliphist store
 #exec-once = mako
 
 # Floating apps
@@ -99,8 +99,6 @@ windowrulev2 = center, class: org.prismlauncher.PrismLauncher
 #windowrule = size 810 610, kitty
 
 # Associate apps with worspaces
-#windowrulev2 = renderunfocused, class: X-Plane
-#windowrulev2 = renderunfocused, title: X-System
 windowrulev2=workspace 2 silent, class: X-Plane
 windowrulev2=workspace 1, class: google-chrome
 windowrule=workspace 9, obs
@@ -146,7 +144,7 @@ general {
   gaps_in = 5
   gaps_out = 10
   border_size = 2
-	col.active_border = rgba(F0BD66ff)
+	col.active_border = rgba(46798Fff)
 	col.inactive_border = rgba(3A3A3Aff)
   layout = dwindle
 	#apply_sens_to_raw=0
@@ -225,15 +223,16 @@ bind = $mainMod, x, exec, pactl set-source-volume @DEFAULT_SOURCE@ 100%
 bind = ,XF86Launch5, exec, amixer set Master toggle | notify-send "speakers toggled"
 bind = ,XF86Launch6, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle | notify-send "microphone toggled"
 bind = $mainMod, return, exec, kitty
-bind = $mainMod, d, exec, rofi -show drun
-#bind = $mainMod, d, exec, anyrun
+#bind = $mainMod, d, exec, rofi -show drun
+bind = $mainMod, d, exec, anyrun
 bind = $mainMod SHIFT, q, killactive 
 #bind = $mainMod, z, exec, /home/unix-like/.config/hypr/changeWallpaper2
 bind = $mainMod, z, exec, playerctl play-pause
 bind = $mainMod SHIFT, space, togglefloating
 bind = $mainMod, F, fullscreen
 bind = $mainMod, e, exec, /usr/bin/nautilus
-bind = $mainMod, n, exec, clipman pick --tool="rofi" --max-items=30
+#bind = $mainMod, n, exec, clipman pick --tool="rofi" --max-items=30
+bind = $mainMod, n, exec, cliphist list | anyrun --show-results-immediately true | cliphist decode | wl-
 bind = $mainMod ,Print, exec, HYPRSHOT_DIR=/home/unixlike/Pictures/screens hyprshot -c -m region -z
 bind = ,Print, exec, HYPRSHOT_DIR=/home/unixlike/Pictures/hyprshot hyprshot -c -m output -z
 bind = ALT,F9,pass,^(com\.obsproject\.Studio)$

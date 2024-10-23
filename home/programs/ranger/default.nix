@@ -73,6 +73,7 @@ ext mov, has mpv, X, flag f = mpv "$@"
 ext m4a, has mpv, X, flag f = mpv "$@"
 ext svg, has imv, X, flag f = imv "$@"
 ext rar, has file-roller, X, flag f = file-roller "$@"
+ext webp, has eog, X, flag f = eog "$@"
 
 label editor = "$EDITOR" -- "$@"
 label pager  = "$PAGER" -- "$@"

@@ -67,6 +67,7 @@ exec-once = swww init
 exec-once = waybar
 exec-once = hyprctl setcursor Adwaita 24
 exec-once = wl-paste --watch cliphist store
+exec-once = corectrl
 #exec-once = mako
 
 # Floating apps
@@ -90,7 +91,7 @@ windowrule=float,file-roller
 windowrule=float,Helvum
 windowrule=float,eog
 windowrule=float,mpv
-windowrule=float,vlc
+#windowrule=float,vlc
 
 # Resizes and moves windows
 windowrulev2 = move 700 300, title: Administrator privileges required
@@ -143,8 +144,8 @@ input {
 general {
   gaps_in = 5
   gaps_out = 10
-  border_size = 2
-	col.active_border = rgba(46798Fff)
+  border_size = 1
+	col.active_border = rgba(C1C1C1ff)
 	col.inactive_border = rgba(3A3A3Aff)
   layout = dwindle
 	#apply_sens_to_raw=0
@@ -182,9 +183,8 @@ animations {
 
 # Tiling mode
 dwindle {
-
-    pseudotile = yes # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-    preserve_split = yes # you probably want this
+  pseudotile = yes # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+  preserve_split = yes # you probably want this
 }
 
 master {
@@ -193,8 +193,7 @@ master {
 
 
 gestures {
-   
-    workspace_swipe = on
+  workspace_swipe = on
 }
 
 #Binds

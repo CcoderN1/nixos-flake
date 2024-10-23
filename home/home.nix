@@ -7,7 +7,7 @@
     ./pkgs
     ./programs
     ./environments/${envir}
-    #./environments/defaultapp
+    ./environments/defaultapp
   ];
   home = {
     stateVersion = "${curversion}";

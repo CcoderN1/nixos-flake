@@ -2,7 +2,7 @@
   home.file.".config/mimeapps.list".text = ''
 [Added Associations]
 text/plain=org.gnome.TextEditor.desktop;
-image/png=org.gnome.Loupe.desktop;
+image/png=org.gnome.Loupe.desktop;org.gnome.eog.desktop;
 application/zip=org.gnome.FileRoller.desktop;
 image/jpeg=org.gnome.Loupe.desktop;
 application/x-shellscript=org.gnome.TextEditor.desktop;
@@ -27,7 +27,7 @@ x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
 x-scheme-handler/about=firefox.desktop
 x-scheme-handler/unknown=firefox.desktop
-image/png=org.gnome.Loupe.desktop
+image/png=org.gnome.eog.desktop
 application/zip=org.gnome.FileRoller.desktop
 image/jpeg=org.gnome.Loupe.desktop
 x-scheme-handler/eclipse+command x-scheme-handler/eclipse+mpc=_nix_store_rb4v6k14k1ybg6q2i2jk9p7v4hcbwf0r-eclipse-java-4.32_eclipse_.desktop

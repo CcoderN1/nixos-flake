@@ -12,7 +12,6 @@
     ./fish
     ./vscode
     ./ranger
-    ./autostart
     ./neovim
     ./vkBasalt
     ./virtmanager
@@ -22,6 +21,7 @@
     ./desktop-override/obs
     ./desktop-override/vesktop
     ./desktop-override/heroic
+    ./autostart
   ] ++ lib.lists.optionals (envir == "Hyprland") [
     ./waybar
     ./anyrun

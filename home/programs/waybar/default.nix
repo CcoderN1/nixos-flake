@@ -6,7 +6,7 @@
   };
   home.file.".config/waybar/config.jsonc".text = ''// -*- mode: jsonc -*-
 {	
-		"width": 920,
+		"width": 1000,
 		"height": 0,
     "layer": "top",
     "position": "bottom",

@@ -71,5 +71,7 @@
     rewaita
     telegram-desktop
     ffmpegthumbnailer
+    termdown
+    xdragon
   ];
 }

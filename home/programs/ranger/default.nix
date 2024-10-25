@@ -54,6 +54,9 @@ map x shell ./%s &
 # Space folder
 map cv shell du -sh %s;sleep 1
 map cx shell nautilus .
+
+#dragon drop
+map <C-d> shell dragon -a -x %p --and-exit
   '';
 
   home.file.".config/ranger/rifle.conf".text = ''
@@ -74,6 +77,7 @@ ext m4a, has vlc, X, flag f = vlc "$@"
 ext svg, has imv, X, flag f = imv "$@"
 ext rar, has file-roller, X, flag f = file-roller "$@"
 ext webp, has eog, X, flag f = eog "$@"
+ext ico, has eog, X, flag f = eog "$@"
 
 label editor = "$EDITOR" -- "$@"
 label pager  = "$PAGER" -- "$@"

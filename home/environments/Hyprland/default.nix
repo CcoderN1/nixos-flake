@@ -103,7 +103,7 @@ windowrulev2 = center, class: org.prismlauncher.PrismLauncher
 windowrulev2=workspace 2 silent, class: X-Plane
 windowrulev2=workspace 1, class: google-chrome
 windowrule=workspace 9, obs
-windowrule=workspace 3 silent, steam
+#windowrule=workspace 3 silent, steam
 #windowrulev2=workspace 8 silent, class: org.telegram.desktop
 
 # Associate monitors with workspaces
@@ -216,8 +216,8 @@ binde=, XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 binde=, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 
 # My binds
-bind = $mainMod, e, exec, nautilus
-bind = $mainMod, b, exec, nautilus ~/buffer
+bind = $mainMod, e, exec, nemo
+bind = $mainMod, b, exec, nautilus
 bind = $mainMod, x, exec, pactl set-source-volume @DEFAULT_SOURCE@ 100%
 bind = ,XF86Launch5, exec, amixer set Master toggle | notify-send "speakers toggled"
 bind = ,XF86Launch6, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle | notify-send "microphone toggled"

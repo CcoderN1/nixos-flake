@@ -2,7 +2,7 @@
   home.file.".config/hypr/hyprlock.conf".text = ''
   background {
     monitor =
-    path = /home/whyoolw/Pictures/dphoto-1533135091724-62cc5402aa20.png  # only png supported for now
+    path = /home/unixlike/wallpaper/whyoolw_new/wallhaven-3l1x3v.jpg   # only png supported for now
     # color = $color1
 
     # all these options are taken from hyprland, see https://wiki.hyprland.org/Configuring/Variables/#blur for explanations

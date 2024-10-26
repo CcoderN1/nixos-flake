@@ -9,7 +9,8 @@
 {
   gtk = {
     enable = true;
-      cursorTheme = {
+    iconTheme.name = "Rewaita";
+    cursorTheme = {
       name = "Adwaita";
       size = 24;
     };
@@ -47,6 +48,7 @@
     pywal
     hyprlock
     gnome-system-monitor
+    gnome-calendar
     pulseaudio
     libnotify
     wev
@@ -60,7 +62,7 @@
     extraConfig = ''
 #Monitors
 source = /home/unixlike/nixos-flake/home/environments/Hyprland/monitor.conf
-#source = /home/unixlike/.config/hypr/test.conf
+source = /home/unixlike/.config/hypr/test.conf
 #Autostart
 exec-once = swww init
 #exec-once = wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"

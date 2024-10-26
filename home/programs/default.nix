@@ -23,6 +23,7 @@
     ./desktop-override/heroic
     ./autostart
   ] ++ lib.lists.optionals (envir == "Hyprland") [
+    #./waybar_old_my
     ./waybar
     ./anyrun
     ./rofi

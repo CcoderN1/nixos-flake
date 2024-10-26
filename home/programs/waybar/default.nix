@@ -218,29 +218,26 @@ window#waybar {
 }
 
 #workspaces button {
-    padding: 0 0 0 6;
-    margin: 8px 3px;
-    border-radius: 32px;
-    color: @color11;
-    background-color: @color4;
-        transition: all 0.3s ease-in-out;
-
+  padding: 0 0 0 6;
+  margin: 8px 3px;
+  border-radius: 32px;
+  color: @color11;
+  background-color: @color4;
+  transition: all 0.3s ease-in-out;
 }
 
 #workspaces button:hover {
 	background-color: @color2;
 	color: @color2;
 	border-radius: 16;
-
 }
 
 #workspaces button.active {
-    background-color: @color2;
-    padding: 0px 16px;
-    border-radius: 16px;
-    opacity: 1.0;
-        transition: all 0.3s ease-in-out;
-
+  background-color: @color2;
+  padding: 0px 16px;
+  border-radius: 16px;
+  opacity: 1.0;
+  transition: all 0.3s ease-in-out;
 }
 
 #tray {
@@ -251,8 +248,8 @@ window#waybar {
 	margin: 5 10px;
 	border: solid 2px @color2;
 	border-radius: 12;
-
 }
+
 #battery {
 	background: @background;
 	color: @color6;

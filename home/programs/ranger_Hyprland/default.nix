@@ -5,7 +5,7 @@
 {
   home.file.".config/ranger/rc.conf".text = ''
 # icons ranger
-default_linemode devicons
+#default_linemode devicons
 
 #Images preview
 set preview_images true

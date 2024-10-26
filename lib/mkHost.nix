@@ -4,7 +4,7 @@
 {
   mkHost = {
     hostname,
-    envir ? "gnome",
+    envir ? "GNOME",
     system ? "x86_64-linux",
     curversion ? "24.11",
     uservars ? ({

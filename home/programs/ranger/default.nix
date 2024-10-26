@@ -36,7 +36,7 @@ copymap G ge
 map zz shell 7z a archive.7z %s
 
 #Delete
-map D shell -s trash-put %s &
+#map D console delete %s
 
 #Search fzf
 map <C-f> fzf

@@ -272,13 +272,13 @@ window#waybar {
 	background: @background;
 	color: @color6;
 	padding: 0 8 0 0;
-	font-size: 15;
+	font-size: 15px;
 }
 
 #clock {
 	background: @background;
 	color: @color6;
-	font-size: 17px;
+	font-size: 16px;
 	padding: 5 5px;
 
 }
@@ -288,7 +288,7 @@ window#waybar {
 	color: @color6;
 	padding: 0 5 0 8;
 	margin: 1 10 1 1px;
-	font-size: 16px;
+	font-size: 14px;
 	border-radius: 6
 }
 #backlight {
@@ -296,7 +296,7 @@ window#waybar {
 	color: @color6;
 	padding: 0 0 0 10;
 	margin: 1 10 1 1px;
-	font-size: 16px;
+	font-size: 14px;
 	border-radius: 6
 
 }

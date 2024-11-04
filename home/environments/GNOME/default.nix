@@ -26,5 +26,6 @@
     gnomeExtensions.transcodeappsearch
     gnomeExtensions.media-controls
     gnomeExtensions.clipboard-history
+    gnomeExtensions.blur-my-shell
   ];
 }

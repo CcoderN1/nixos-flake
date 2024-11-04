@@ -19,6 +19,7 @@ video/x-matroska=vlc.desktop;
 video/webm=vlc.desktop;
 image/webp=org.gnome.Loupe.desktop;
 application/vnd.debian.binary-package=org.gnome.FileRoller.desktop;
+application/x-trash=org.gnome.TextEditor.desktop;
 
 [Default Applications]
 text/plain=org.gnome.TextEditor.desktop
@@ -48,5 +49,6 @@ video/x-matroska=vlc.desktop
 video/webm=vlc.desktop
 image/webp=org.gnome.Loupe.desktop
 application/vnd.debian.binary-package=org.gnome.FileRoller.desktop
-  '';
+application/x-trash=org.gnome.TextEditor.desktop
+'';
 }

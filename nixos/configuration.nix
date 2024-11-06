@@ -29,6 +29,7 @@
       ./mouse_gdm.nix
       ./modules/virtualisation.nix
       ./modules/services.nix
+      ./modules/zapret.nix
       ./modules/${envir}.nix
     ];
 

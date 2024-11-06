@@ -73,5 +73,7 @@
     ffmpegthumbnailer
     termdown
     xdragon
+    tmate
+    zapret
   ];
 }

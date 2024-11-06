@@ -18,7 +18,7 @@
     ./obs
   ] ++ lib.lists.optionals (envir == "GNOME") [
     ./desktop-override/obs
-    ./desktop-override/vesktop
+    #./desktop-override/vesktop
     ./autostart
     ./ranger_GNOME
   ] ++ lib.lists.optionals (envir == "Hyprland") [

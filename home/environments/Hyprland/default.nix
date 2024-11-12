@@ -62,7 +62,7 @@
     extraConfig = ''
 #Monitors
 source = /home/unixlike/nixos-flake/home/environments/Hyprland/monitor.conf
-source = /home/unixlike/.config/hypr/test.conf
+#source = /home/unixlike/.config/hypr/test.conf
 #Autostart
 exec-once = swww init
 #exec-once = wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
@@ -140,7 +140,7 @@ input {
   }
   # mouse sensevity
   accel_profile = flat
-  sensitivity = -0.6
+  sensitivity = -0.7
 }
 
 general {

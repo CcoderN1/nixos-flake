@@ -1,6 +1,6 @@
 {
   services.zapret = {
-    enable = true;
+    enable = false;
     params = [
       "--dpi-desync=fake,split --dpi-desync-ttl=1 --dpi-desync-autottl=5 --dpi-desync-split-pos=1" # my provider specific
       "--dpi-desync=split2 --dpi-desync=fake --dpi-desync-repeats=6" # youtube

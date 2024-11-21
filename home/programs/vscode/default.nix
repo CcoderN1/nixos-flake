@@ -15,6 +15,7 @@
       "extensions.experimental.affinity" = {
         "asvetliakov.vscode-neovim" = 1;
       };
+      "update.mode" = "none";
     };
     extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide

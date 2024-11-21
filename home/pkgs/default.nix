@@ -25,7 +25,7 @@
     mangohud
     python3
     tor
-    mission-center
+    stable.mission-center
     lutris
     ntfs3g
     killall
@@ -51,11 +51,11 @@
     nekoray
     jetbrains.idea-ultimate
     jetbrains.webstorm
-    jetbrains.phpstorm
+    jetbrains.pycharm-professional
     nodejs_22
     php
     vkbasalt
-    cava
+    stable.cava
     tokei
     antimicrox
     appimage-run

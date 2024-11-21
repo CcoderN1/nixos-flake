@@ -137,7 +137,7 @@
 		"clock": {
 			"format": "{:%H:%M:%S}",
 			"tooltip-format": "{:%OI:%M:%S}",
-   		"timezone": "Europe/Riga",
+   		"timezone": "Europe/Moscow",
     		"interval": 1,
 		"tooltip": "false",
         	"format-alt": "{:%d.%m.%y}",

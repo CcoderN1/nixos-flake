@@ -161,10 +161,7 @@ decoration {
     passes = 4
     new_optimizations = true
 	}
-  drop_shadow = yes
-  shadow_range = 8
-  shadow_render_power = 5
-  col.shadow = rgba(2f343fff)
+  #col.shadow = rgba(2f343fff)
 }
 
 animations {
@@ -190,7 +187,6 @@ dwindle {
 }
 
 master {
-  no_gaps_when_only = true
 }
 
 

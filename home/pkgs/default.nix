@@ -6,11 +6,8 @@
 {
   home.packages = with pkgs; [
     over-google-chrome
-    ranger
     vesktop
-    htop
     veracrypt
-    p7zip
     #gpu-screen-recorder-gtk
     #gpu-screen-recorder
     over-gpu-screen-recorder
@@ -22,16 +19,12 @@
     adw-gtk3
     droidcam
     mangohud
-    python3
     tor
     stable.mission-center
     lutris
-    ntfs3g
-    killall
     fastfetch
     kdenlive
     dconf-editor
-    micro
     celluloid
     mpv
     vlc
@@ -45,7 +38,6 @@
     todoist-electron
     krita
     gamescope
-    neovim
     nekoray
     jetbrains.idea-ultimate
     jetbrains.webstorm
@@ -54,7 +46,6 @@
     php
     vkbasalt
     stable.cava
-    tokei
     antimicrox
     appimage-run
     waydroid
@@ -69,11 +60,9 @@
     rewaita
     telegram-desktop
     ffmpegthumbnailer
-    termdown
     xdragon
     tmate
     blender-hip
-    tree
     android-tools
     numix-icon-theme
   ];

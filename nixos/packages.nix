@@ -32,5 +32,16 @@
     nh
     gparted
     ncdu
+    tree
+    killall
+    ranger
+    htop
+    p7zip
+    python3
+    ntfs3g
+    micro
+    neovim
+    tokei
+    termdown
   ];
 }

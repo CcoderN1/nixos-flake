@@ -5,7 +5,6 @@
 }:
 {
   home.packages = with pkgs; [
-    spoofdpi
     over-google-chrome
     ranger
     vesktop
@@ -20,7 +19,7 @@
     helvum
     qadwaitadecorations
     qadwaitadecorations-qt6
-    stable.adw-gtk3
+    adw-gtk3
     droidcam
     mangohud
     python3
@@ -31,7 +30,6 @@
     killall
     fastfetch
     kdenlive
-    eclipses.eclipse-java
     dconf-editor
     micro
     celluloid
@@ -74,6 +72,9 @@
     termdown
     xdragon
     tmate
-    zapret
+    blender-hip
+    tree
+    android-tools
+    numix-icon-theme
   ];
 }

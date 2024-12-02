@@ -22,8 +22,7 @@
     ./autostart
     ./ranger_GNOME
   ] ++ lib.lists.optionals (envir == "Hyprland") [
-    #./waybar_old_my
-    ./waybar
+    ./waybars/waybar_my
     ./anyrun
     ./rofi
     ./kitty

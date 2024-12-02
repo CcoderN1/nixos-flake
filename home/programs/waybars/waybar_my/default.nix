@@ -1,8 +1,8 @@
 {
   home.file.".config/waybar/config".text = ''
 {
-  "layer": "top",
-  "position": "bottom",
+    "layer": "top",
+    	"position": "top",
 	"modules-left": ["hyprland/workspaces", "custom/playerctl"],
 	"modules-center": ["temperature"],
 	"modules-right": ["tray", "custom/notify", "hyprland/language", "memory", "pulseaudio", "disk", "clock"],
@@ -27,20 +27,23 @@
 	"format": "{icon}",
 	"on-click": "activate",
 	"format-icons": {
-	  "1": "1",
-    "2": "2",
-    "3": "3",
-    "4": "4",
-    "5": "5",
-    "6": "6",
-    "7": "7",
-    "8": "8",
-    "9": "9",
+	        "1": "1",
+               	"2": "2",
+               	"3": "3",
+               	"4": "4",
+               	"5": "5",
+               	"6": "6",
+               	"7": "7",
+               	"8": "8",
+        	"9": "9",
 		"10": "10",
+
 	},
 
 },
-    "custom/playerctl": { "format": "{icon}", "return-type": "json",
+    "custom/playerctl": {
+      "format": "{icon}",
+      "return-type": "json",
       "max-length": 64,
       "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
       "on-click": "playerctl play-pause",
@@ -66,7 +69,7 @@
   "disk": {
     "format": "󰋊 {free}",
     "interval": 30,
-    "path": "/home/unixlike"
+    "path": "/home/unix-like"
   },
 	"tray": {
 		"icon-size": 16,
@@ -119,32 +122,31 @@
   }
 }
   '';
-   home.file.".config/waybar/style.css".text = ''
+  home.file.".config/waybar/style.css".text = ''
 * {
     border: none;
     border-radius: 0px;
-    font-family: open-sans;
+    font-family: Iosevka, Noto Sans Mono;
     font-size: 12px;
     font-style: normal;
     min-height: 0;
 }
 
-@import "/home/unixlike/.cache/wal/colors-waybar.css";
-
+@import "themes/NordIce.css";
 
 window#waybar {
-  background-color: @background;
-  /*border-bottom: 0px solid #000000;*/
-  /*color: @background;*/
+    background: @panel-color;
+    border-bottom: 0px solid #000000;
+    color: @bg-color;
 }
 
 #workspaces {
-    /*color: @font-workspace-noactive-color; */
+    color: @font-workspace-noactive-color;
     border-radius: 6px;
-    background: @background;
+    background: @bg-color;
     margin: 5px 5px 5px 5px;
     padding: 0px 5px;
-    /*border: solid 1px @border-color;*/
+    border: solid 1px @border-color;
     font-weight: bold;
     font-style: normal;
     font-size: 12px;
@@ -153,23 +155,22 @@ window#waybar {
 #workspaces button {
     padding: 0px 5px;
     border-radius: 6px;
-    color: @cursor;
+    color: @font-color;
     /* color: black; */
-    background-color: @color4;
-    /*text-shadow: 1px 1px 3px rgba(0,0,0,0.75);*/
+    background-color: transparent;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
 }
 
 #workspaces button.active {
-  transition: ease 0.3s;
-  /*color: @font-workspace-active-color; */
-  background-color: @color2;
-  border-radius: 6px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
+    transition: ease 0.3s;
+    color: @font-workspace-active-color; 
+    background: @bg-workspace-active-color;
+    border-radius: 6px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
 }
 
 #workspaces button:hover {
-  background-color: @color2;
-  color: @color2;
+	color: #626975;
 }
 
 #custom-date, #clock, #custom-randwall, #custom-launcher {
@@ -180,9 +181,8 @@ window#waybar {
   border: solid 0px #EBDBB2;
 }
 
-
 #custom-date {
-	color: @color2;
+	color: #D3869B;
 }
 
 #custom-power {
@@ -197,67 +197,67 @@ window#waybar {
 }
 
 #tray {
-  background: @background;
-  margin: 5px 5px 5px 5px;
-  border-radius: 6px;
-  padding: 0px 5px;
-  /*border-right: solid 1px #1D1D1D;*/
-  border: solid 1px @color2;
+    background: @bg-color;
+    margin: 5px 5px 5px 5px;
+    border-radius: 6px;
+    padding: 0px 5px;
+    /*border-right: solid 1px #1D1D1D;*/
+    border: solid 1px #282828;
 }
 
 #clock {
-  color: @cursor;
-  background: @background;
-  margin: 5px 5px 5px 5px;
-  border-radius: 6px;
-  padding: 0px 5px;
-  border: solid 1px @color2;
-  font-weight: bold;
+    color: @font-color;
+    background: @bg-color;
+    margin: 5px 5px 5px 5px;
+    border-radius: 6px;
+    padding: 0px 5px;
+    border: solid 1px #282828;
+     font-weight: bold;
   font-style: normal;
   font-size: 12px;
 }
 
 #backlight {
-  background-color: @background;
-  color: @color2;
-  border-radius: 0px 0px 0px 0px;
-  margin: 5px;
-  margin-left: 0px;
-  margin-right: 0px;
-  padding: 0px 0px;
+    background-color: #24283b;
+    color: #db4b4b;
+    border-radius: 0px 0px 0px 0px;
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px 0px;
 }
 
 #bluetooth {
-  color: @cursor;
-  border-radius: 8px;
-  margin-left: 10px;
-  margin-right: -5px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
+    color: @font-color;
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-right: -5px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
 }
 
 #bluetooth.connected {
-  color: @cursor;
-  border-radius: 8px;
+    color: #B8BB26;
+    border-radius: 8px;
 }
 
 #bluetooth.off {
-  color: @color2; 
-  border-radius: 8px;
+    color: #928374;
+    border-radius: 8px;
 }
 #network, #pulseaudio,#language{
-  color: @cursor;
-  background: @background;
-  margin: 5px 5px 5px 5px;
-  border-radius: 6px;
-  padding: 0px 5px;
-  border: solid 1px @color2;
-  font-weight: bold;
+    color: @font-color;
+    background: @bg-color;
+    margin: 5px 5px 5px 5px;
+    border-radius: 6px;
+    padding: 0px 5px;
+    border: solid 1px #282828;
+     font-weight: bold;
   font-style: normal;
   font-size: 12px;
 }
 
 #custom-playerctl {
-	background: @background;
+	background: @bg-color;
 	padding-left: 15px;
 	padding-right: 14px;
 	border-radius: 6px;
@@ -271,7 +271,7 @@ window#waybar {
   font-size: 12px;
   /* Add a shadow to the bakground */
   /* box-shadow: 0px 1px 1px #EBDBB2; */
-  border: 1px solid @color2;
+  border: 1px solid #282828;
 }
 
 #custom-playerlabel {
@@ -289,7 +289,7 @@ window#waybar {
 }
 
 #window {
-    background: @background;
+    background: #000000;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 6px;
@@ -304,33 +304,44 @@ window#waybar {
 #custom-wf-recorder {
     padding: 0 20px;
     color: #CC241D;
-    background-color: @background;
+    background-color: #000000;
 }
 
 #cpu {
-    background-color: @background;
-    color: @cursor;
+    background-color: @bg-color;
+    color: @font-color;
     border-radius: 6px;
     margin: 5px;
     margin-left: 5px;
     margin-right: 5px;
     padding: 0px 10px 0px 10px;
     font-weight: bold;
-    border: 1px solid @color2;
+    border: 1px solid #282828;
+}
+#custom-cava{
+    background-color: #000000;
+    /*color: #FABD2D;*/
+    border-radius: 6px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+    border: 1px solid #282828;
 }
 
 #custom-gpu-usage, #custom-notify, #custom-fan, #custom-tempgpu, #temperature, #disk, #memory {
-    background-color: @background;
-    color: @cursor;
+    background-color: @bg-color;
+    color: @font-color;
     border-radius: 6px;
     margin: 5px;
     margin-left: 5px;
     margin-right: 5px;
     padding: 0px 10px 0px 10px;
     font-weight: bold;
-    border: 1px solid @color2;
+    border: 1px solid #282828;
 }
-   '';
+  '';
   home.file.".config/waybar/themes/theme.css".text = ''
 /home/unix-like/.config/waybar/themes/IceBerg.css
   '';
@@ -357,5 +368,15 @@ window#waybar {
 @define-color bg-workspace-active-color #FFFFFF;
 @define-color font-workspace-active-color #626975;
 @define-color font-workspace-noactive-color #626975;
+  '';
+  home.file.".config/waybar/themes/NordIce.css".text = ''
+@define-color bg-color #2C2E38;
+@define-color font-color #BFBDB6;
+@define-color bg-workspace-active-color #FFFFFF;
+@define-color font-workspace-active-color #626975;
+@define-color font-workspace-noactive-color #626975;
+@define-color border-color #282828;
+/*@define-color panel-color rgba(0, 0, 0, 0); */
+@define-color panel-color #11151C;
   '';
 }

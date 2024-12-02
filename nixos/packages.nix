@@ -43,5 +43,6 @@
     neovim
     tokei
     termdown
+    unzip
   ];
 }
